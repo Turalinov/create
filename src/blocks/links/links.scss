@@ -3,7 +3,15 @@
 }
 
 .links__item {
-
+  @include tablets {
+    &:first-child {
+    display: flex;
+      &::after {
+        content: '|';
+        padding: 0 10px;
+      }
+    }
+  }
 }
 
 .links__record {

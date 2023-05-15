@@ -75,6 +75,11 @@ h6 {
 a {
   color: inherit;
   text-decoration: unset;
+  transition: all .5s;
+
+  &:hover {
+    color: #4E4E4E;
+  }
 }
 
 button {

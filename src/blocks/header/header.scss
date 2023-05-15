@@ -6,6 +6,10 @@
   padding: 30px 0;
   background-color: var(--clr-white);
 
+  @include desktop() {
+    padding: 33px 0;
+  }
+
   &::before {
     content: '';
     position: fixed;
@@ -15,6 +19,10 @@
     height: 106px;
     background-color: var(--clr-white);
     z-index: $z-index-header;
+
+    @include desktop() {
+      display: none;
+    }
   }
 
   &.active {
@@ -78,6 +86,16 @@
   overflow: auto;
   height: 100%;
 
+  @include desktop {
+    position: static;
+    padding: 0;
+    background-color: transparent;
+    overflow: initial;
+    height: initial;
+    width: initial;
+    margin-left: 100px;
+  }
+
 }
 
 .header__menu {
@@ -85,18 +103,31 @@
 }
 
 .header__links {
+  position: relative;
+  z-index: $z-index-header-links;
 
+  @include tablets {
+    display: flex;
+  }
 }
+
 
 .header__links .links__record {
   display: none;
+
+  @include tablets {
+    display: block;
+  }
 }
 
 .header__links .links__phone {
-  position: relative;
-  z-index: $z-index-header-phone;
+  display: block;
 }
 
 .header__toggle {
   z-index: $z-index-toggle;
+
+  @include desktop() {
+    display: none;
+  }
 }

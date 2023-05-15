@@ -8,4 +8,8 @@
 
 .logo__img {
   height: 20px;
+
+  @include desktop {
+    height: 28px;
+  }
 }
