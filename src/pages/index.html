@@ -1,60 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Главная страница | Create</title>
-  <meta name="description" content="Здесь должен быть какой-нибудь смысловой текст описания">
-  @@include('../blocks/favicon/favicon.html')
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="preload" href="fonts/AvenirNextCyr-Regular.woff2" as="font" crossorigin>
-  <link rel="preload" href="fonts/AvenirNextCyr-Bold.woff2" as="font" crossorigin>
-  <link rel="stylesheet" href="css/main.css">
+@@include('../blocks/head/head.html', {
+"title": "Главная страница",
+"description": "Здесь должен быть какой-нибудь смысловой текст описания"
+})
+
+<body>
+  <div class="wrapper">
+
+    <div class="wrapper__content">
+      @@include('../blocks/header/header.html')
 
 
-</head>
+      <main class="main">
+        <!-- все секции -->
 
-<body class="page">
-  <header class="header">
-    Header
-  </header>
+      </main>
+    </div>
 
-
-  <main class="main">
-    <section id="hero">
-      @@include('../blocks/button/button.html', {
-      "text": "Click Me!!!"
-      })
-
-      <picture>
-        <source media="(min-width: 1200px)" type="image/webp" srcset="img/banner@desktop.webp">
-        <source media="(min-width: 1200px)" srcset="img/banner@desktop.png">
-        <source type="image/webp" srcset="img/banner@mobile.webp">
-        <img src="img/banner@mobile.png" alt="" width="200" height="200">
-      </picture>
+    @@include('../blocks/footer/footer.html')
 
 
-      <div>
-        <svg class="svg">
-          <use xlink:href="img/sprites/sprite.svg#lio"></use>
-        </svg>
-      </div>
-
-
-    </section>
-  </main>
-
-
-  <footer class="footer">
-    footer
-  </footer>
-
-  <section class="modal" data-modal="order">
-    modal
-  </section>
-
-  <!-- <script src="js/vendor.js"></script> -->
-  <script src="js/general.js"></script>
 
 </body>
 

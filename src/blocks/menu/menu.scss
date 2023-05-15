@@ -1,0 +1,50 @@
+.menu {
+
+  & > ul > li {
+    border-top: 1px solid #EDEDED;
+
+   & > a {
+      font-size: 20px;
+      display: block;
+      @include rightGrotesk();
+      padding: 20px 0;
+    }
+  }
+}
+
+.menu__item {
+
+}
+
+.menu__submenu {
+
+}
+
+.menu__submenu.active {
+
+}
+
+.menu__submenu-wrap {
+  .sub-menu {
+    column-count: 2;
+    column-gap: 20px;
+    font-size: 14px;
+    padding: 20px 0 40px;
+
+    & > li:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.menu__submenu-img {
+  display: none;
+}
+
+.menu__submenu-img-elem {
+
+}
+
+.menu__submenu-close {
+  display: none;
+}

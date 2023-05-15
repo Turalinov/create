@@ -1,7 +1,7 @@
 //swiper
 // import Swiper from 'swiper/bundle';
 
-//button
-import button from '%modules%/button/button'
+//toggle
+import button from '%modules%/toggle/toggle'
 
 button();

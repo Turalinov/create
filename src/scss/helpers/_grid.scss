@@ -1,0 +1,17 @@
+.container {
+  height: 100%;
+  padding: 0 10px;
+  border: 1px solid red;
+
+  @include tablets {
+    padding: 0 30px;
+    border: 1px solid blue;
+  }
+
+  @include desktop {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 50px;
+    border: 1px solid orange;
+  }
+}

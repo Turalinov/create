@@ -23,9 +23,9 @@ module.exports = function sprite() {
     .pipe(replace("&gt;", ">"))
     .pipe(cheerio({
       run: function ($) {
-        $('[fill]').removeAttr('fill');
-        $('[style]').removeAttr('style');
-        $('[stroke]').removeAttr('stroke');
+        // $('[fill]').removeAttr('fill');
+        // $('[style]').removeAttr('style');
+        // $('[stroke]').removeAttr('stroke');
       },
       parserOptions: { xmlMode: true }
     }))

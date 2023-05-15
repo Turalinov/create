@@ -1,0 +1,37 @@
+.toggle {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  appearance: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    transition: all 0.3s;
+  }
+
+  &::before {
+    top: 10px;
+  }
+
+  &::after {
+    bottom: 10px;
+  }
+}
+
+.toggle__inner {
+  position: absolute;
+  display: block;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+}
+

@@ -1,7 +1,10 @@
 @import "helpers/normalize";
-@import "helpers/libs";
+//подключить в том случае, если используем swiper
+// @import "helpers/libs";
+
+@import "helpers/fonts";
 @import "helpers/variables";
 @import "helpers/mixins";
-@import "helpers/fonts";
 @import "helpers/global";
+@import "helpers/grid";
 @import "../blocks/general-blocks";

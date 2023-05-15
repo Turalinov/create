@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="container">
+    <div class="header__wrapper">
+
+      @@include('../logo/logo.html', {
+      "clazz": "header__logo"
+      })
+
+      <div class="header__dropdown">
+        @@include('../menu/menu.html', {
+        "clazz": "header__menu"
+        })
+      </div>
+
+      @@include('../links/links.html', {
+      "clazz": "header__links"
+      })
+
+      @@include('../toggle/toggle.html', {
+      "clazz": "header__toggle"
+      })
+
+    </div>
+  </div>
+</header>
