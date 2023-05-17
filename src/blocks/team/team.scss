@@ -1,0 +1,117 @@
+.team {
+  padding: 50px 0;
+  background-color: var(--clr-white);
+
+  @include desktop() {
+    padding: 80px 0;
+  }
+}
+
+.team__title {
+  margin-bottom: 30px;
+
+  @include desktop() {
+    margin-bottom: 50px;
+  }
+}
+
+.team__img {
+  margin-bottom: 20px;
+
+  @include desktop {
+    height: 360px;
+  }
+}
+
+.team__img-elem {
+  @include desktop {
+    object-fit: cover;
+  }
+
+}
+
+.team__person {
+  @include suisseIntl(book);
+  font-size: 18px;
+  letter-spacing: -0.05em;
+  margin-bottom: 5px;
+
+  @include desktop() {
+    font-size: 20px;
+    letter-spacing: -0.03em;
+  }
+}
+
+.team__position {
+  font-size: 14px;
+  color: #4E4E4E;
+
+  @include desktop() {
+    font-size: 20px;
+  }
+}
+
+.team__double-wrap {
+  padding: 80px 10px;
+  text-align: center;
+
+  @include desktop() {
+    padding: initial;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 360px;
+  }
+}
+
+.team__double {
+  margin-bottom: 20px;
+}
+
+.team__link {
+  font-size: 14px;
+}
+
+
+.team .grid {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 50%);grid-template-rows: auto;
+  grid-template-areas:
+    "team1 team1"
+    "team4 team5"
+    "team6 team7"
+    "team8 team8";
+
+  margin-top: -20px;
+  margin-left: -20px;
+    // align-items: start;
+    // position: relative;
+    // z-index: 2;
+
+  @include desktop() {
+    grid-template-columns: repeat(4, 25%);
+     grid-template-areas:
+    "team1 team2 team3 team4"
+    "team5 team6 team7 team8";
+  }
+
+     @for $i from 1 through 8 {
+      & .grid__child:nth-child(#{$i}) {
+        grid-area: team#{$i};
+        }
+      }
+
+    .grid__child {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .grid__child-8 {
+      justify-self: center;
+    }
+
+}
