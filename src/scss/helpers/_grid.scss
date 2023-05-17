@@ -4,13 +4,14 @@
   border: 1px solid red;
 
   @include tablets {
+    max-width: 768px;
     padding: 0 30px;
     border: 1px solid blue;
+    margin: 0 auto;
   }
 
   @include desktop {
     max-width: $container-width;
-    margin: 0 auto;
     padding: 0 50px;
     border: 1px solid orange;
   }

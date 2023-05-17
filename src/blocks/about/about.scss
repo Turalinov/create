@@ -32,9 +32,13 @@
 .about__list {
   display: flex;
   flex-direction: column;
+  margin-top: -20px;
 
   @include desktop() {
     flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    justify-content: center;
   }
 }
 
@@ -44,19 +48,15 @@
   padding: 30px;
   background-color: var(--clr-gray);
   border-radius: 12px;
+  margin-top: 20px;
 
   @include desktop() {
     padding: 50px 60px;
+    width: calc(100% / 3 - 20px);
+    margin-left: 20px;
   }
 
-  & + .about__item {
-    margin-top: 20px;
 
-    @include desktop() {
-      margin-top: initial;
-      margin-left: 20px;
-    }
-  }
 }
 
 .about__top {
@@ -76,6 +76,7 @@
 .about__img {
   width: 84px;
   height: 70px;
+  pointer-events:none;
 
   @include desktop() {
     width: 185px;
