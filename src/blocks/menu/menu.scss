@@ -69,6 +69,7 @@
   @include desktop {
     position: absolute;
     overflow: hidden;
+    right: 0;
     max-height: 0;
     opacity: 0;
     padding: 0;

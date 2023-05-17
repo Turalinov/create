@@ -2,6 +2,7 @@
   box-sizing: border-box;
   --clr-black: #0A0A0A;
   --clr-white: #ffffff;
+  --clr-gray: #FAFAFA;
 }
 
 *,
@@ -70,6 +71,36 @@ h6 {
   margin: 0;
   padding: 0;
   @include rightGrotesk();
+}
+
+h1 {
+  font-size: 57px;
+  line-height: 1.1;
+
+  @include desktop() {
+    font-size: 73px;
+  }
+}
+
+h2 {
+  font-size: 33px;
+  line-height: 1.1;
+  letter-spacing: -0.9px;
+
+  @include desktop() {
+    font-size: 45px;
+  }
+}
+
+
+h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+
+  @include desktop() {
+    line-height: 1.4;
+  }
 }
 
 a {

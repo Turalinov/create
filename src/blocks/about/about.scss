@@ -1,0 +1,106 @@
+.about {
+  background-color: var(--clr-white);
+  padding: 100px 0 35px;
+
+  @include desktop() {
+    padding: 90px 0 80px;
+  }
+}
+
+.about__title {
+  margin-bottom: 30px;
+
+  @include desktop() {
+    margin-bottom: 50px;
+  }
+}
+
+.about__desc {
+  @include suisseIntl(book);
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+
+  @include desktop() {
+    max-width: 882px;
+    font-size: 20px;
+    letter-spacing: -0.03em;
+  }
+}
+
+.about__list {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop() {
+    flex-direction: row;
+  }
+}
+
+.about__item {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: var(--clr-gray);
+  border-radius: 12px;
+
+  @include desktop() {
+    padding: 50px 60px;
+  }
+
+  & + .about__item {
+    margin-top: 20px;
+
+    @include desktop() {
+      margin-top: initial;
+      margin-left: 20px;
+    }
+  }
+}
+
+.about__top {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+
+  @include desktop() {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+  }
+}
+
+.about__img {
+  width: 84px;
+  height: 70px;
+
+  @include desktop() {
+    width: 185px;
+    height: 150px;
+    margin-bottom: 40px;
+  }
+}
+
+.about__img-elem {
+  //
+}
+
+.about__subtitle {
+  //
+}
+
+.about__subdesc {
+  font-size: 14px;
+  margin-top: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+
+  @include desktop() {
+    font-size: 16px;
+    margin-top: 30px;
+    letter-spacing: -0.02em;
+  }
+}
