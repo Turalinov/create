@@ -1,0 +1,23 @@
+.form {
+
+}
+
+.form__row {
+  display: flex;
+
+  & + .form__row {
+    margin-top: 20px;
+  }
+}
+
+.form__block {
+  box-sizing: border-box;
+  flex: 1;
+
+  & + .form__block {
+    margin-left: 20px;
+  }
+}
+
+.form__input {
+}

@@ -1,14 +1,16 @@
 //swiper
 // import Swiper from 'swiper/bundle';
-
 //toggle
 import button from '%modules%/toggle/toggle'
 //menu
 import menu from '%modules%/menu/menu'
+//form
+import form from '%modules%/form/form'
+
 
 button();
 menu();
-
+form();
 // Инициализация слайдера
 // const swiper = new Swiper('.swiper-container', {
 //   effect: 'fade',

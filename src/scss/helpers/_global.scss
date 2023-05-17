@@ -133,3 +133,32 @@ button {
 .wrapper__content {
   flex: 1;
 }
+
+// input:not([type=checkbox]):not([type=radio]),
+// select, textarea
+input[type=text],input[type=email],input[type=tel] {
+  text-align: center;
+  border: 1px solid #BDBDBD;
+  border-radius: 12px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  padding: 17px;
+  transition: .3s;
+
+
+
+  @include desktop {
+    font-size: 16px;
+    padding: 23px;
+  }
+
+  &::placeholder {
+     color: #4E4E4E;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

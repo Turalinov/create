@@ -3,24 +3,38 @@
   text-align: center;
   font-size: 14px;
   color: var(--clr-white);
-  padding: 14px 37px;
+  padding: 17px;
   background-color: var(--clr-orange);
   border: 1px solid transparent;
   border-radius: 12px;
   transition: all .5s;
+  width: 100%;
+
+
+
 
   @include desktop() {
     font-size: 16px;
-    padding: 12px 32px;
+    padding: 23px;
   }
 
   &:hover {
     color: var(--clr-white);
   }
+
+  &:disabled {
+    opacity: 0.8;
+  }
+
 }
 
 .btn--outline {
+  padding: 14px 37px;
   color: var(--clr-black);
   background-color: transparent;
   border: 1px solid var(--clr-black);
+
+  @include desktop() {
+    padding: 12px 32px;
+  }
 }

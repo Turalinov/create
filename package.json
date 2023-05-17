@@ -39,17 +39,12 @@
     "node-normalize-scss": "^8.1.2",
     "gulp-webp": "^4.0.1",
     "imagemin-webp": "^6.0.0",
-
-    
     "babel-loader": "^8.1.0",
     "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-decorators": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
-    
     "@babel/register": "^7.10.5",
-
-    
     "@htmlacademy/editorconfig-cli": "^1.0.0",
     "bem-tools-core": "0.0.3",
     "bem-tools-create": "^2.3.0",
@@ -59,7 +54,6 @@
     "gulp-rigger": "^0.5.8",
     "gulp-webp-html": "^1.0.2",
     "husky": "^4.2.5",
-
     "stylelint": "^13.6.1",
     "stylelint-config-htmlacademy": "^0.1.4",
     "stylelint-order-htmlacademy": "^1.0.1",
@@ -68,7 +62,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "hc-sticky": "^2.2.3",
-    "imask": "^6.0.5",
+    "imask": "^6.4.3",
     "jquery": "^3.5.1",
     "slick-carousel": "^1.8.1",
     "stimulus": "^1.1.1",
