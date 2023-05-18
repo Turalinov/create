@@ -33,6 +33,9 @@
 }
 
 .form__input {
+  &.error {
+    border-color: var(--clr-orange);
+  }
 }
 
 .form__message {
@@ -47,7 +50,11 @@
 }
 
 .form__btn {
+  padding: 17px;
 
+  @include desktop {
+    padding: 23px;
+  }
 }
 
 .form__politics {

@@ -35,8 +35,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
 
-  // background-color: var(--clr-white);
-  background-color: red;
+  background-color: var(--clr-white);
 }
 
 body.lock {
@@ -157,5 +156,21 @@ input[type=text],input[type=email],input[type=tel] {
 
   &:focus {
     outline: none;
+  }
+}
+
+.br-desktop {
+    display: none;
+
+  @include desktop {
+  display: block;
+  }
+}
+
+.br-mobile {
+    display: block;
+
+  @include desktop {
+  display: none;
   }
 }

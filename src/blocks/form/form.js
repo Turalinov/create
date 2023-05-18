@@ -108,11 +108,15 @@ export default function form() {
 
         if (nameInput.value == '') {
           errors.push(errorsStatus.nameEmpty);
+          nameInput.classList.add('error')
         } else {
-
-
+          nameInput.classList.remove('error')
           if (/\d/.test(nameInput.value) && nameInput.value !== '') {
           errors.push(errorsStatus.nameNotDigit);
+
+          nameInput.classList.add('error')
+          } else {
+          nameInput.classList.remove('error')
           }
         }
 
@@ -121,12 +125,20 @@ export default function form() {
         if(!(phoneMask.masked.isComplete)) {
           errors.push(errorsStatus.phoneNotCorrect);
 
+          phoneInput.classList.add('error')
+
+        } else {
+          phoneInput.classList.remove('error')
 
         }
 
         if (!(isValidEmail(emailInput.value))) {
           errors.push(errorsStatus.emailNotCorrect)
+          emailInput.classList.add('error')
 
+        } else {
+
+          emailInput.classList.remove('error')
         }
 
 
