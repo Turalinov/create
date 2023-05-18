@@ -1,17 +1,16 @@
 .record {
-  background-color: #FAFAFA;
-  border-radius: 12px;
-  padding: 30px 0;
+    background-color: var(--clr-white);
+    padding: 50px 0;
+
 
   @include desktop() {
-    background-color: var(--clr-white);
-    border-radius: initial;
     padding: 80px 0 60px;
   }
 }
 .record__wrap {
   display: flex;
   flex-direction: column-reverse;
+  padding: 30px 0;
 
   @include desktop() {
     flex-direction: row;
@@ -41,12 +40,10 @@
 }
 .record__desc {
   font-size: 14px;
-  letter-spacing: -0.01em;
   margin-bottom: 30px;
 
   @include desktop() {
     font-size: 16px;
-    letter-spacing: -0.02em;
   }
 }
 
@@ -55,7 +52,6 @@
 }
 
 .record__title-mobile {
-  letter-spacing: -0.03em;
   margin-bottom: 30px;
 
   @include desktop() {

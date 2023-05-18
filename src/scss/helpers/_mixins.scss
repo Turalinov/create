@@ -4,6 +4,9 @@
   @if $style == bold {
     font-weight: 700;
   }
+  @if $style == medium {
+    font-weight: 500;
+  }
 }
 
 @mixin suisseIntl($style: regular) {

@@ -33,12 +33,10 @@
 .team__person {
   @include suisseIntl(book);
   font-size: 18px;
-  letter-spacing: -0.05em;
   margin-bottom: 5px;
 
   @include desktop() {
     font-size: 20px;
-    letter-spacing: -0.03em;
   }
 }
 

@@ -71,7 +71,7 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-  @include rightGrotesk();
+  @include rightGrotesk(medium);
 }
 
 h1 {
@@ -86,7 +86,6 @@ h1 {
 h2 {
   font-size: 33px;
   line-height: 1.1;
-  letter-spacing: -0.9px;
 
   @include desktop() {
     font-size: 45px;
@@ -97,7 +96,6 @@ h2 {
 h3 {
     font-size: 20px;
     line-height: 1.2;
-    letter-spacing: -0.04em;
 
   @include desktop() {
     line-height: 1.4;
@@ -143,7 +141,6 @@ input[type=text],input[type=email],input[type=tel] {
   width: 100%;
   font-size: 14px;
   line-height: 1.5;
-  letter-spacing: -0.01em;
   padding: 17px;
   transition: .3s;
 

@@ -39,3 +39,57 @@
     padding: 12px 32px;
   }
 }
+
+.btn--social {
+  padding: 14px;
+
+  @include desktop {
+    font-size: 14px;
+  }
+
+  &:hover {
+    color: var(--clr-black);
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+    margin-left: 28px;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -28px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+
+  }
+
+
+      &-whatsapp {
+        span {
+        &::before {
+          background-image: url('../img/whatsapp.svg');
+        }
+      }
+      }
+
+      &-telegram {
+        span {
+        &::before {
+          background-image: url('../img/telegram.svg');
+        }
+      }
+      }
+
+
+
+}
