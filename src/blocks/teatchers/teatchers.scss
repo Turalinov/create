@@ -1,0 +1,72 @@
+
+.teatchers {
+  padding: 50px 0;
+  font-size: 14px;
+
+  @include desktop {
+    padding: 80px 0;
+    font-size: 16px;
+  }
+}
+
+.container {
+}
+
+.teatchers__title {
+  margin-bottom: 50px;
+
+}
+
+.teatchers__list {
+  margin-top: -20px;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -20px;
+  }
+}
+
+.teatchers__item {
+  background-color: var(--clr-gray);
+  border-radius: 12px;
+  margin-top: 20px;
+  padding: 30px;
+
+  @include desktop {
+    width: calc(100% / 2 - 20px);
+    margin-left: 20px;
+    padding: 40px 60px;
+  }
+}
+
+.teatchers__img {
+  width: 80px;
+  height: 80px;
+
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 12px;
+
+  @include desktop {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 40px;
+  }
+}
+
+.teatchers__person {
+  @include suisseIntl(book);
+  margin-bottom: 20px;
+  font-size: 18px;
+
+
+  @include desktop {
+    font-size: 20px;
+  }
+}
+
+.teatchers__desc {
+}
