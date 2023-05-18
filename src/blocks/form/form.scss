@@ -4,9 +4,17 @@
 
 .form__row {
   display: flex;
+  flex-direction: column;
+
+  @include desktop() {
+    flex-direction: row;
+  }
 
   & + .form__row {
-    margin-top: 20px;
+    margin-top: 15px;
+    @include desktop() {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -15,9 +23,37 @@
   flex: 1;
 
   & + .form__block {
-    margin-left: 20px;
+    margin-top: 15px;
+
+    @include desktop() {
+      margin-top: initial;
+      margin-left: 20px;
+    }
   }
 }
 
 .form__input {
+}
+
+.form__input-error {
+    font-size: 14px;
+    color: red;
+    margin: 0 5px;
+}
+
+.form__btn {
+
+}
+
+.form__politics {
+  color: #4E4E4E;
+  font-size: 14px;
+
+  @include desktop() {
+    font-size: 15px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
 }

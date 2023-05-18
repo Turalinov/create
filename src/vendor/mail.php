@@ -39,4 +39,18 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
 "Content-Type: text/html; charset=utf-8" . PHP_EOL .
 'From: '.adopt($project_name).' <'.$admin_email.'>' . PHP_EOL .
 'Reply-To: '.$admin_email.'' . PHP_EOL;
-mail($admin_email, adopt($form_subject), $message, $headers );
+
+
+$success = mail($admin_email, adopt($form_subject), $message, $headers );
+
+
+if (!$success) {
+    $errorMessage = error_get_last()['message'];
+    echo json_encode(array('status' => false, 'error' => $errorMessage));  exit();
+} else {
+
+  echo json_encode(array('status' => true, 'data' => $_POST));  exit();
+}
+die;
+
+

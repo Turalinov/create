@@ -1,9 +1,6 @@
 
 import IMask from 'imask';
 
-//
-// проверьте правильность номера
-// проверьте правильность почты
 
 export default function form() {
 
@@ -17,23 +14,21 @@ export default function form() {
     emailNotCorrect: 'Проверьте правильность почты',
   }
 
-
   const message = {
     loading: 'Загрузка данных',
     success: 'Спасибо, ваша заявка принята! Наш менеджер свяжется с вами в ближайшее время',
-    failure: "Щось пішло не так, зверніться до адмінстратора сайту",
+    failure: "Что-то пошло не так, обратитесь к администратору сайта",
   }
 
-  const phones = document.querySelectorAll('.js-phone-input');
 
   if (forms.length > 0) {
     forms.forEach(form => {
+
+      const btn = form.querySelector('button.btn');
+      btn.disabled = true;
+
       addValidate(form);
-
       bindPostData(form);
-
-
-
     })
 
       function bindPostData(form) {
@@ -51,29 +46,29 @@ export default function form() {
 
         form.insertAdjacentElement("afterend", statusMessage );
 
-        // btn.disabled = true;
+        btn.disabled = true;
 
 
         const formData = new FormData(form);
 
 
 
-        // postData("vendor/mail.php", formData)
-        //   .then((data) => {
-        //     console.log(data)
-        //     statusMessage.innerText = message.success;
-        //   })
-        //   .catch((err) => {
-        //     console.log(err)
-        //     statusMessage.innerText = message.failure;
-        //   })
-        //   .finally(() => {
-        //     phoneMask.masked.reset();
-        //     form.reset();
-        //     setTimeout(() => {
-        //       statusMessage.remove()
-        //     }, 4000);
-        //   })
+        postData("vendor/mail.php", formData)
+          .then((data) => {
+            console.log(data)
+            statusMessage.innerText = message.success;
+          })
+          .catch((err) => {
+            console.log(err)
+            statusMessage.innerText = message.failure;
+          })
+          .finally(() => {
+            phoneMask.masked.reset();
+            form.reset();
+            setTimeout(() => {
+              statusMessage.remove()
+            }, 4000);
+          })
       })
     }
 
@@ -91,6 +86,7 @@ export default function form() {
       const phoneInput = form.querySelector('.js-phone-input');
       const nameInput = form.querySelector('.js-name-input');
       const emailInput = form.querySelector('.js-email-input');
+      const errorContainer = form.querySelector('.js-error-container');
 
 
       const btn = form.querySelector('button.btn');
@@ -104,7 +100,6 @@ export default function form() {
       phoneInput.addEventListener("input", inputHandler);
       nameInput.addEventListener("input", inputHandler);
       emailInput.addEventListener("input", inputHandler);
-      form.addEventListener("submit", inputHandler)
 
 
       function inputHandler() {
@@ -113,53 +108,34 @@ export default function form() {
 
         if (nameInput.value == '') {
           errors.push(errorsStatus.nameEmpty);
-          console.log(nameInput.nextElementSibling)
-
-          nameInput.nextElementSibling.innerText = errorsStatus.nameEmpty;
-
         } else {
-          nameInput.nextElementSibling.innerText = '';
 
 
           if (/\d/.test(nameInput.value) && nameInput.value !== '') {
           errors.push(errorsStatus.nameNotDigit);
-          console.log(nameInput.nextElementSibling)
-
-          nameInput.nextElementSibling.innerText = errorsStatus.nameNotDigit;
-
-        } else {
-          nameInput.nextElementSibling.innerText = '';
-        }
+          }
         }
 
 
 
         if(!(phoneMask.masked.isComplete)) {
           errors.push(errorsStatus.phoneNotCorrect);
-          console.log(phoneInput.nextElementSibling)
 
-          phoneInput.nextElementSibling.innerText = errorsStatus.phoneNotCorrect;
 
-        } else {
-          phoneInput.nextElementSibling.innerText = '';
         }
 
         if (!(isValidEmail(emailInput.value))) {
           errors.push(errorsStatus.emailNotCorrect)
-          console.log(emailInput.nextElementSibling)
 
-          emailInput.nextElementSibling.innerText = errorsStatus.emailNotCorrect;
-
-        } else {
-          emailInput.nextElementSibling.innerText = '';
         }
 
 
 
-
         if (errors.length > 0 ) {
+          errorContainer.innerText = errors[0];
           btn.disabled = true
         } else {
+          errorContainer.innerText = '';
           btn.disabled = false
         }
 
