@@ -1,18 +1,18 @@
 .container {
   height: 100%;
   padding: 0 10px;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   @include tablets {
     max-width: 768px;
     padding: 0 30px;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     margin: 0 auto;
   }
 
   @include desktop {
     max-width: $container-width;
     padding: 0 50px;
-    border: 1px solid orange;
+    // border: 1px solid orange;
   }
 }
