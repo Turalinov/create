@@ -1,0 +1,18 @@
+.photo{
+  position: relative;
+  height: 225px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  @include desktop {
+    height: 460px;
+  }
+}
+
+.video__preview {
+  height: 100%;
+}
+.video__preview-img {
+  object-fit: cover;
+  object-position: top;
+}

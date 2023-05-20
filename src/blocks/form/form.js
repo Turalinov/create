@@ -11,6 +11,8 @@ export default function form() {
     nameNotDigit: 'Имя не должно содержать цифры',
     nameEmpty: 'Имя не должно быть пустым',
     phoneNotCorrect: 'Проверьте правильность номера',
+    phoneFirstNotCorrect: 'Номер телефона должен начинаться с 7 или 8',
+    phoneSecondNotCorrect: 'Вторая цифра должна быть 9',
     emailNotCorrect: 'Проверьте правильность почты',
   }
 
@@ -92,7 +94,7 @@ export default function form() {
       const btn = form.querySelector('button.btn');
 
       phoneMask = IMask(phoneInput, {
-        mask: '8 (000) – 000 – 00 – 00',
+        mask: '0 (000) – 000 – 00 – 00',
         placeholderChar: '_',
         lazy: true,
       });
@@ -123,11 +125,34 @@ export default function form() {
 
 
         if(!(phoneMask.masked.isComplete)) {
+
+          let phoneVal = phoneMask.unmaskedValue;
+
+          console.log(phoneVal[0] );
+
+          if (!(phoneVal[0] == 7 || phoneVal[0] ==8 )) {
+            errors.push(errorsStatus.phoneFirstNotCorrect)
+            phoneInput.classList.add('error')
+          } else {
+            phoneInput.classList.remove('error')
+          }
+
+          if (!(phoneVal[1] == 9)) {
+            errors.push(errorsStatus.phoneSecondNotCorrect)
+            phoneInput.classList.add('error')
+          } else {
+            phoneInput.classList.remove('error')
+          }
+
+
+
           errors.push(errorsStatus.phoneNotCorrect);
 
           phoneInput.classList.add('error')
 
         } else {
+
+
           phoneInput.classList.remove('error')
 
         }

@@ -1,5 +1,131 @@
 .hero {
-  padding-top: 86px;
-  background-color: #ffffff;
-  min-height: 780px;
+  padding-top: 87px;
+  font-size: 14px;
+
+  @include desktop {
+    padding-top: 96px;
+    font-size: 16px;
+  }
+
+  & > .container {
+    padding: 0;
+
+    @include tablets {
+      padding: 0 30px;
+    }
+
+    @include desktop {
+      padding: 0 50px;
+    }
+  }
 }
+
+.hero__slider-wrap {
+  position: relative;
+}
+
+
+.hero__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--clr-white);
+
+
+  &-inner {
+    padding: 20px;
+
+    @include tablets {
+      padding: 30px;
+      padding-top: 60px;
+    }
+
+    @include desktop {
+      max-width: 490px;
+      padding: 0 0 70px 80px;
+
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+  }
+}
+
+.hero__pagination {
+  margin-bottom: 30px;
+
+  .swiper-pagination-bullet  {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0,0,0,0.8);
+    & + .swiper-pagination-bullet {
+      margin-left: 20px;
+    }
+  }
+
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--clr-white);
+  }
+}
+
+.hero__title {
+  font-size: 50px;
+  margin-bottom: 20px;
+  line-height: 1;
+
+  @include desktop {
+    font-size: 73px;
+  }
+}
+
+
+.hero__desc {
+  margin-bottom: 20px;
+
+  @include desktop {
+    margin-bottom: 30px;
+  }
+}
+
+
+.hero__btns {
+  display: flex;
+
+  @include desktop {
+    max-width: 440px;
+    margin-bottom: 130px;
+  }
+
+  & a {
+
+    @include desktop {
+      padding: 18px;
+    }
+    & + a {
+      margin-left: 20px;
+    }
+  }
+}
+
+.hero__phone {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  color: var(--clr-white);
+
+  @include desktop {
+    padding: 18px;
+  }
+  /* Note: backdrop-filter has minimal browser support */
+  &:hover {
+    color: var(--clr-white);
+  }
+}
+

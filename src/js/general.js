@@ -1,34 +1,26 @@
-//swiper
-// import Swiper from 'swiper/bundle';
+
 //toggle
 import button from '%modules%/toggle/toggle'
 //menu
 import menu from '%modules%/menu/menu'
 //form
 import form from '%modules%/form/form'
+//accordion
+import accordion from '%modules%/accordion/accordion'
+//swiper-g
+import gallerySlider from '%modules%/gallery-slider/gallery-slider'
+//video
+import video from '%modules%/video/video';
+
+
+//swiper-g
+import heroSlider from '%modules%/hero-slider/hero-slider'
 
 
 button();
 menu();
 form();
-// Инициализация слайдера
-// const swiper = new Swiper('.swiper-container', {
-//   effect: 'fade',
-//   centeredSlides: true,
-//   loop: true,
-//   autoplay: {
-//     delay: 4000,
-//     disableOnInteraction: false,
-//   },
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//     renderBullet: function (index, className) {
-//       return '<div class="' + className + '"><span class="bullet" ></span><span>' + `${(index < 9) ? '0' : ''}`  + (index + 1) + '</span></div>';
-//     },
-//   },
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-// });
+accordion();
+gallerySlider();
+video();
+heroSlider();

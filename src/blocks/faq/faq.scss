@@ -1,0 +1,52 @@
+.faq ,
+.stages {
+  padding: 50px 0;
+  font-size: 14px;
+
+  @include desktop {
+    padding: 80px 0;
+    font-size: 16px;
+  }
+
+  & > .container {
+    padding: 0px;
+
+    @include desktop {
+      padding: 0 50px;
+    }
+  }
+}
+
+.faq__title, .stages__title {
+  margin-bottom: 30px;
+  padding: 0 20px;
+
+  @include tablets {
+    padding: 0 30px;
+  }
+  @include desktop {
+    margin-bottom: 50px;
+  }
+}
+
+.faq__desc,
+.stages__desc {
+  margin-bottom: 30px;
+  padding: 0 20px;
+
+  @include tablets {
+    padding: 0 30px;
+  }
+
+  @include desktop {
+    margin-bottom: 50px;
+    max-width: 450px;
+  }
+
+
+
+  a {
+    text-decoration: underline;
+  }
+}
+

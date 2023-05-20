@@ -1,0 +1,84 @@
+<section class="results">
+  <div class="container">
+    <h2 class="results__title">
+      Результаты учеников
+    </h2>
+
+
+    <div class="results__slider-wrap">
+      <!-- Slider main container -->
+      <div class="gallery-slider swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+
+
+            @@include('../../blocks/video/video.html', {
+            "clazz": "gallery-slider__video",
+            "preview": "youtube1",
+            "video": "M7lc1UVf-VE"
+            })
+            <div class="gallery-slider__text">
+              Юлия Шивари | Отчетный концерт
+            </div>
+
+
+          </div>
+          <div class="swiper-slide">
+
+
+            @@include('../../blocks/video/video.html', {
+            "clazz": "gallery-slider__video",
+            "preview": "youtube2",
+            "video": "M7lc1UVf-VE"
+            })
+
+            <div class="gallery-slider__text">
+              Юлия Шивари | Отчетный концерт
+            </div>
+
+
+          </div>
+          <div class="swiper-slide">
+
+
+            @@include('../../blocks/photo/photo.html', {
+            "clazz": "gallery-slider__photo",
+            "preview": "review__img",
+            })
+
+            <div class="gallery-slider__text">
+              Юлия Шивари | Отчетный концерт
+            </div>
+
+
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+
+      <div class="gallery-slider-buttons">
+        <!-- If we need navigation buttons -->
+        <button class="gallery-slider-button gallery-slider-button-prev">
+          <svg class="close__svg" viewBox="0 0 20 20">
+            <use xlink:href="img/sprites/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+        <button class="gallery-slider-button gallery-slider-button-next">
+          <svg class="close__svg" viewBox="0 0 20 20">
+            <use xlink:href="img/sprites/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+</section>

@@ -1,0 +1,50 @@
+.reviews {
+  font-size: 14px;
+  padding: 50px 0;
+
+  @include desktop {
+    font-size: 16px;
+    padding: 80px 0;
+  }
+
+  & .container {
+    position: relative;
+  }
+}
+
+.reviews__title {
+  margin-bottom: 30px;
+
+  @include desktop {
+    max-width: 790px;
+    margin-bottom: 50px;
+  }
+}
+
+.reviews__desc {
+  margin-bottom: 30px;
+   @include desktop {
+    max-width: 790px;
+    margin-bottom: 50px;
+  }
+}
+
+.reviews__slider-wrap {
+}
+
+
+.reviews {
+  .gallery-slider-buttons {
+    @include desktop {
+      top: 110px;
+    }
+  }
+}
+
+.reviews .video__btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+
+  @include desktop {}
+}

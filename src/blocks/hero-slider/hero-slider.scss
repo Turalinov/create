@@ -1,0 +1,49 @@
+.hero-slider {
+  overflow: hidden;
+  width: 100%;
+  height: 780px;
+
+  @include desktop {
+    height: 750px;
+  }
+}
+
+.hero-slider .swiper-wrapper {
+  box-sizing: border-box;
+}
+
+.hero-slider .swiper-slide {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 780px;
+  overflow: hidden;
+
+  @include desktop {
+    height: 750px;
+  }
+}
+
+.hero-slider-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+
+  @include desktop {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+
+.hero-slider__img {
+width: 100%;
+height: 100%;
+}
+
+.hero-slider__img-elem {
+  object-fit: cover;
+  object-position: top;
+}

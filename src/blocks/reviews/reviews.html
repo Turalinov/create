@@ -1,0 +1,74 @@
+<section class="reviews">
+  <div class="container">
+    <h2 class="reviews__title">
+      Счастливые глаза учеников скажут больше, чем десятки отзывов
+    </h2>
+
+    <div class="reviews__desc">
+      Каждый год мы проводим не менее двух крупных концертов, где ученики вместе с наставниками делятся своими
+      результатами. Присоединяйтесь, чтобы учиться и попробовать новое.
+    </div>
+
+
+    <div class="reviews__slider-wrap">
+      <!-- Slider main container -->
+      <div class="gallery-slider swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+
+
+            @@include('../../blocks/video/video.html', {
+            "clazz": "gallery-slider__video",
+            "preview": "reviews-video",
+            "video": "M7lc1UVf-VE"
+            })
+            <div class="gallery-slider__text">
+              Акустический концерт «Звёзды. Начало» | 2022 г.
+            </div>
+
+
+          </div>
+          <div class="swiper-slide">
+
+
+            @@include('../../blocks/photo/photo.html', {
+            "clazz": "gallery-slider__photo",
+            "preview": "review__img",
+            })
+
+            <div class="gallery-slider__text">
+              Ежегодный отчетный концерт «Салют 23ий» | 2022 г.
+            </div>
+
+
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+
+      <div class="gallery-slider-buttons">
+        <!-- If we need navigation buttons -->
+        <button class="gallery-slider-button gallery-slider-button-prev">
+          <svg class="close__svg" viewBox="0 0 20 20">
+            <use xlink:href="img/sprites/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+        <button class="gallery-slider-button gallery-slider-button-next">
+          <svg class="close__svg" viewBox="0 0 20 20">
+            <use xlink:href="img/sprites/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+</section>
