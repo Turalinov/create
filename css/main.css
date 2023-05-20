@@ -1001,19 +1001,16 @@ input[type=text], input[type=email], input[type=tel] {
 
 .container {
   height: 100%;
-  padding: 0 10px;
-  border: 1px solid red; }
+  padding: 0 10px; }
   @media screen and (min-width: 768px) {
     .container {
       max-width: 768px;
       padding: 0 30px;
-      border: 1px solid blue;
       margin: 0 auto; } }
   @media screen and (min-width: 1200px) {
     .container {
       max-width: 1440px;
-      padding: 0 50px;
-      border: 1px solid orange; } }
+      padding: 0 50px; } }
 
 .btn {
   display: block;
