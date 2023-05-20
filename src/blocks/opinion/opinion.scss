@@ -1,0 +1,24 @@
+.opinion {
+  font-size: 14px;
+  padding: 50px 0;
+
+  @include desktop {
+    font-size: 16px;
+    padding: 80px 0;
+  }
+
+  & .container {
+    position: relative;
+  }
+}
+
+.opinion__title {
+  margin-bottom: 30px;
+
+  @include desktop {
+    margin-bottom: 60px;
+  }
+}
+
+.opinion__slider-wrap {
+}

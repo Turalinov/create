@@ -1,0 +1,71 @@
+.notion {
+  padding: 30px;
+  font-size: 14px;
+  background: var(--clr-gray);
+  border-radius: 12px;
+
+  @include desktop {
+    padding: 50px 60px;
+    font-size: 16px;
+  }
+}
+
+.notion__wrap {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+  }
+}
+
+.notion__control {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+
+  @include desktop {
+    flex-direction: column;
+    margin-bottom: initial;
+  }
+
+}
+
+.notion__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.notion__img-elem {
+//
+}
+
+.notion__counter {
+//
+}
+.notion__content {
+
+
+  @include desktop {
+    margin-left: 100px;
+  }
+}
+
+.notion__text {
+  @include suisseIntl(book);
+  font-size: 18px;
+  margin-bottom: 15px;
+
+  @include desktop {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+}
+
+
+.notion__author {
+
+}

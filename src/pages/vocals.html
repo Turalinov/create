@@ -6,18 +6,21 @@
 "description": "Здесь должен быть какой-нибудь смысловой текст описания"
 })
 
-<body>
+<body class="lock">
+  @@include('../blocks/preloader/preloader.html')
   <div class="wrapper">
 
     <div class="wrapper__content">
       @@include('../blocks/header/header.html')
       @@include('../blocks/direction/direction.html')
-      @@include('../blocks/results/results.html')
       @@include('../blocks/audience/audience.html')
+      @@include('../blocks/results/results.html')
       @@include('../blocks/learn/learn.html')
       @@include('../blocks/stages/stages.html')
+      @@include('../blocks/advantages/advantages.html')
       @@include('../blocks/teatchers/teatchers.html')
       @@include('../blocks/price/price.html')
+      @@include('../blocks/opinion/opinion.html')
       @@include('../blocks/faq/faq.html')
       @@include('../blocks/record/record.html')
 
