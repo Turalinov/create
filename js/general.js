@@ -189,6 +189,51 @@ function accordion() {
 
 /***/ }),
 
+/***/ "./src/blocks/direction/direction.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/direction/direction.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return direction; });
+function direction() {
+  document.addEventListener('DOMContentLoaded', function () {
+    var imgContainer = document.querySelector('.menu__submenu-img-elem');
+    var src;
+    var oldSrc;
+    document.onmouseover = function (event) {
+      // важно: быстро движущийся курсор может прыгнуть сразу к дочернему элементу, пропустив родительский
+      // так что событие mouseover произойдёт сразу на дочернем элементе.
+
+      var anchorElem = event.target.closest('[data-src]');
+      if (!anchorElem) return;
+
+      // показываем подсказку и запоминаем её
+      src = 'img/' + anchorElem.getAttribute('data-src') + '.png';
+      if (src == oldSrc) {
+        return;
+      }
+      console.log(anchorElem);
+      oldSrc = src;
+      imgContainer.src = src;
+    };
+    document.onmouseout = function () {
+      // возможно такое, что произошло событие mouseout, но мы всё ещё внутри элемента
+      // (оно было где-то внутри и всплыло)
+      // но в этом случае сразу же последует событие mouseover,
+      // то есть подсказка исчезнет и потом снова покажется
+      //
+      // к счастью, этого не будет видно,
+      // так как оба события происходят почти одновременно
+    };
+  });
+}
+
+/***/ }),
+
 /***/ "./src/blocks/form/form.js":
 /*!*********************************!*\
   !*** ./src/blocks/form/form.js ***!
@@ -256,7 +301,7 @@ function form() {
       phoneMask = Object(imask__WEBPACK_IMPORTED_MODULE_0__["default"])(phoneInput, {
         mask: '0 (000) – 000 – 00 – 00',
         placeholderChar: '_',
-        lazy: true
+        lazy: false
       });
       phoneInput.addEventListener("input", inputHandler);
       nameInput.addEventListener("input", inputHandler);
@@ -468,8 +513,9 @@ function heroSlider() {
     // Optional parameters
     loop: true,
     autoplay: {
-      delay: 5000
+      delay: 3000
     },
+    speed: 2000,
     grabCursor: true,
     spaceBetween: 20,
     // slidesPerView: 1.1, //сколкько видны
@@ -1119,6 +1165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_video_video__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/video/video */ "./src/blocks/video/video.js");
 /* harmony import */ var _modules_hero_slider_hero_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/hero-slider/hero-slider */ "./src/blocks/hero-slider/hero-slider.js");
 /* harmony import */ var _modules_opinion_slider_opinion_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/opinion-slider/opinion-slider */ "./src/blocks/opinion-slider/opinion-slider.js");
+/* harmony import */ var _modules_direction_direction__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/direction/direction */ "./src/blocks/direction/direction.js");
 //preloader
 
 //toggle
@@ -1138,6 +1185,8 @@ __webpack_require__.r(__webpack_exports__);
 
 //opinionSlider
 
+//direction
+
 Object(_modules_preloader_preloader__WEBPACK_IMPORTED_MODULE_0__["default"])();
 Object(_modules_toggle_toggle__WEBPACK_IMPORTED_MODULE_1__["default"])();
 Object(_modules_menu_menu__WEBPACK_IMPORTED_MODULE_2__["default"])();
@@ -1147,6 +1196,7 @@ Object(_modules_gallery_slider_gallery_slider__WEBPACK_IMPORTED_MODULE_5__["defa
 Object(_modules_video_video__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_modules_hero_slider_hero_slider__WEBPACK_IMPORTED_MODULE_7__["default"])();
 Object(_modules_opinion_slider_opinion_slider__WEBPACK_IMPORTED_MODULE_8__["default"])();
+Object(_modules_direction_direction__WEBPACK_IMPORTED_MODULE_9__["default"])();
 
 /***/ })
 

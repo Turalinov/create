@@ -54,7 +54,7 @@
 
       <div class="header__logo logo">
   <a href="index.html" class="logo__link">
-    <img class="logo__img" src="img/logo.png" alt="Create">
+    <img class="logo__img" src="img/logo.svg" alt="Create">
   </a>
 </div>
 
@@ -67,48 +67,49 @@
       <div class="menu__submenu">
         <div class="menu__submenu-wrap">
           <ul class="sub-menu">
-            <li class="menu__item current-menu-item">
+            <!-- current-menu-item -->
+            <li class="menu__item " data-src="vocals">
               <a href="vocals.html">Вокал</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction1">
               <a href="drawing_and_graphics.html">Рисование и графика</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction2">
               <a href="guitar_and_ukulele.html">Гитара и укулеле</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction3">
               <a href="drums_and_percussion.html">Барабаны и перкуссия</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction4">
               <a href="piano.html">Фортепиано</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction1">
               <a href="recording_studio.html">Студия звукозаписи</a>
             </li>
             <!-- 2 часть -->
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction2">
               <a href="preparation_for_school.html">Подготовка к школе</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction3">
               <a href="digital_design.html">Цифровой дизайн</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction4">
               <a href="programming.html">Программирование</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction1">
               <a href="events.html">Мероприятия</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction2">
               <a href="city_camp.html">Городской лагерь</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" data-src="direction3">
               <a href="online_classes.html">Онлайн занятия</a>
             </li>
           </ul>
 
           <div class="menu__submenu-img">
             <picture>
-              <source type="image/webp" srcset="img/vocals.webp">
+              <!-- <source type="image/webp" srcset="img/vocals.webp"> -->
               <img src="img/vocals.png" alt="Vocals" class="menu__submenu-img-elem">
             </picture>
           </div>
@@ -248,9 +249,25 @@
 
       <section class="results">
   <div class="container">
-    <h2 class="results__title">
-      Результаты учеников
-    </h2>
+
+    <div class="results__title-wrap">
+      <h2 class="results__title">
+        Результаты учеников
+      </h2>
+      <div class="gallery-slider-buttons">
+        <!-- If we need navigation buttons -->
+        <button class="gallery-slider-button gallery-slider-button-prev">
+          <svg class="close__svg" viewBox="0 0 20 20">
+            <use xlink:href="img/sprites/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+        <button class="gallery-slider-button gallery-slider-button-next">
+          <svg class="close__svg" viewBox="0 0 20 20">
+            <use xlink:href="img/sprites/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
 
 
     <div class="results__slider-wrap">
@@ -652,10 +669,12 @@
       <li class="advantages__item">
 
         <div class="advantages__img">
-          <picture>
-            <source type="image/webp" srcset="img/advantages1.webp">
-            <img src="img/advantages1.png" alt="advantages1" class="advantages__img-elem">
-          </picture>
+          <div class="advantages__img-inner">
+            <picture>
+              <source type="image/webp" srcset="img/advantages1.webp">
+              <img src="img/advantages1.png" alt="advantages1" class="advantages__img-elem">
+            </picture>
+          </div>
         </div>
 
 
@@ -674,10 +693,12 @@
       <li class="advantages__item">
 
         <div class="advantages__img">
-          <picture>
-            <source type="image/webp" srcset="img/advantages2.webp">
-            <img src="img/advantages2.png" alt="advantages2" class="advantages__img-elem">
-          </picture>
+          <div class="advantages__img-inner">
+            <picture>
+              <source type="image/webp" srcset="img/advantages2.webp">
+              <img src="img/advantages2.png" alt="advantages2" class="advantages__img-elem">
+            </picture>
+          </div>
         </div>
 
 
@@ -696,10 +717,12 @@
       <li class="advantages__item">
 
         <div class="advantages__img">
-          <picture>
-            <source type="image/webp" srcset="img/advantages3.webp">
-            <img src="img/advantages3.png" alt="advantages3" class="advantages__img-elem">
-          </picture>
+          <div class="advantages__img-inner">
+            <picture>
+              <source type="image/webp" srcset="img/advantages3.webp">
+              <img src="img/advantages3.png" alt="advantages3" class="advantages__img-elem">
+            </picture>
+          </div>
         </div>
 
 
@@ -851,9 +874,29 @@
 
       <section class="opinion">
   <div class="container">
-    <h2 class="opinion__title">
-      Мнения о занятиях
-    </h2>
+
+    <div class="opinion__title-wrap">
+      <h2 class="opinion__title">
+        Мнения о занятиях
+      </h2>
+
+
+      <div class="opinion-slider-buttons">
+        <!-- If we need navigation buttons -->
+        <button class="opinion-slider-button opinion-slider-button-prev">
+          <svg class="close__svg" viewBox="0 0 20 20">
+            <use xlink:href="img/sprites/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+        <button class="opinion-slider-button opinion-slider-button-next">
+          <svg class="close__svg" viewBox="0 0 20 20">
+            <use xlink:href="img/sprites/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+
 
 
     <div class="opinion__slider-wrap">
@@ -967,10 +1010,7 @@
   <div class="container">
     <h2 class="faq__title">Ответы на популярные вопросы</h2>
 
-    <div class="faq__desc">
-      Не нашли ответа на свой вопрос? Напишите нам в мессенджерах: <a href="#" target="_blank">WhatsApp</a> | <a
-        href="#" target="_blank">Telegram</a>
-    </div>
+
 
     <ul class="faq__list accordion">
       <li class="accordion__item">
@@ -1160,7 +1200,7 @@
           <a href="#" class="btn btn--outline btn--social btn--social-whatsapp foorer__btn ">
 
             <span>
-              Whatsapp
+              WhatsApp
             </span>
 
           </a>
@@ -1312,7 +1352,7 @@
         </div>
         <div class="footer__block">
           <a href="politics.html" target="_blank" class="footer__politics">Политика конфиденциальности</a> <a
-            class="footer__development" href="#" target="_blank">Мы сделали этот сайт</a>
+            class="footer__development" href="https://guysfrom.ru/" target="_blank">Мы сделали этот сайт</a>
         </div>
 
       </div>
