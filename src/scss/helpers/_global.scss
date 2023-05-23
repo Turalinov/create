@@ -30,12 +30,14 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   @include suisseIntl();
-  font-size: 16px;
-  line-height: 1.5;
-
+  @include TextM;
   background-color: var(--clr-white);
+
+
+  @include desktop {
+    @include Text16;
+  }
 }
 
 body.lock {
@@ -75,16 +77,19 @@ h6 {
 
 h1 {
   font-size: 57px;
-  line-height: 1.1;
+  line-height: 1;
+  letter-spacing: -0.02em;
 
   @include desktop() {
     font-size: 73px;
+    line-height: 1;
   }
 }
 
 h2 {
   font-size: 33px;
   line-height: 1.1;
+  letter-spacing: -0.03em;
 
   @include desktop() {
     font-size: 45px;
@@ -94,10 +99,12 @@ h2 {
 
 h3 {
     font-size: 20px;
-    line-height: 1.2;
+    line-height: 24px;
+    letter-spacing:  -0.04em;
 
   @include desktop() {
-    line-height: 1.4;
+    line-height: 28px;
+    letter-spacing:  -0.02em;
   }
 }
 
@@ -138,7 +145,6 @@ input[type=text],input[type=email],input[type=tel] {
   border: 1px solid #BDBDBD;
   border-radius: 12px;
   width: 100%;
-  font-size: 14px;
   line-height: 1.5;
   padding: 17px;
   transition: .3s;
@@ -146,7 +152,6 @@ input[type=text],input[type=email],input[type=tel] {
 
 
   @include desktop {
-    font-size: 16px;
     padding: 23px;
   }
 

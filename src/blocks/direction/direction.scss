@@ -1,10 +1,8 @@
 .direction {
-  padding-top: 87px;
-  font-size: 14px;
+  padding-top: 80px;
 
   @include desktop {
-    padding-top: 96px;
-    font-size: 16px;
+    padding-top: 94px;
   }
 
   & > .container {
@@ -56,8 +54,10 @@
 }
 
 .direction__title {
-  font-size: 42px;
+  font-size: 41px;
   margin-bottom: 25px;
+  line-height: 1;
+  letter-spacing: -0.02em;
 
   @include desktop {
     font-size: 54px;

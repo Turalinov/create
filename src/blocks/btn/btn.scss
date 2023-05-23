@@ -1,7 +1,6 @@
 .btn {
   display: block;
   text-align: center;
-  font-size: 14px;
   color: var(--clr-white);
   padding: 14px;
   background-color: var(--clr-orange);
@@ -11,19 +10,12 @@
   width: 100%;
 
 
-
-
   @include desktop() {
-    font-size: 16px;
     padding: 23px;
   }
 
   &:hover {
     color: var(--clr-white);
-  }
-
-  &:disabled {
-    opacity: 0.5;
   }
 
 }

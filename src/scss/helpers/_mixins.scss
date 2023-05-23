@@ -1,9 +1,6 @@
-@mixin rightGrotesk($style: bold) {
-  font-family: 'RightGrotesk', sans-serif;
+@mixin rightGrotesk($style: medium) {
+  font-family: 'PPRightGrotesk', sans-serif;
 
-  @if $style == bold {
-    font-weight: 700;
-  }
   @if $style == medium {
     font-weight: 500;
   }
@@ -38,4 +35,16 @@
   @media screen and (min-width: 1200px) {
     @content;
   }
+}
+
+@mixin TextM {
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+}
+
+@mixin Text16 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
 }

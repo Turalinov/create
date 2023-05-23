@@ -39,12 +39,9 @@
   }
 }
 .record__desc {
-  font-size: 14px;
   margin-bottom: 30px;
 
-  @include desktop() {
-    font-size: 16px;
-  }
+
 }
 
 .record__form {

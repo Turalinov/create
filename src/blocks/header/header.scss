@@ -3,12 +3,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 17px 0;
   background-color: var(--clr-white);
   z-index: $z-index-header;
 
   @include desktop() {
-    padding: 14px 0;
+    padding: 33px 0;
   }
 
   &::before {
@@ -17,7 +17,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    height: 86px;
+    height: 80px;
     background-color: var(--clr-white);
     z-index: $z-index-header;
 

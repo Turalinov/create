@@ -1,9 +1,7 @@
 .opinion {
-  font-size: 14px;
   padding: 50px 0;
 
   @include desktop {
-    font-size: 16px;
     padding: 80px 0;
   }
 
@@ -13,12 +11,33 @@
 }
 
 .opinion__title {
-  margin-bottom: 30px;
 
-  @include desktop {
-    margin-bottom: 60px;
-  }
 }
 
 .opinion__slider-wrap {
+}
+
+.opinion .opinion-slider-buttons {
+  @include desktop {
+    display: none;
+  }
+}
+
+.opinion__title-wrap {
+  margin-bottom: 30px;
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+
+  .opinion-slider-buttons {
+    display: none;
+
+    @include desktop {
+      display: flex;
+    }
+  }
 }

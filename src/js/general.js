@@ -19,6 +19,8 @@ import video from '%modules%/video/video';
 import heroSlider from '%modules%/hero-slider/hero-slider'
 //opinionSlider
 import opinionSlider from '%modules%/opinion-slider/opinion-slider'
+//direction
+import direction from '%modules%/direction/direction';
 
 
 preloader();
@@ -30,3 +32,4 @@ gallerySlider();
 video();
 heroSlider();
 opinionSlider();
+direction();

@@ -96,7 +96,7 @@ export default function form() {
       phoneMask = IMask(phoneInput, {
         mask: '0 (000) – 000 – 00 – 00',
         placeholderChar: '_',
-        lazy: true,
+        lazy: false,
       });
 
       phoneInput.addEventListener("input", inputHandler);

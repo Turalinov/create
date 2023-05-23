@@ -1,10 +1,8 @@
 .price {
   padding: 50px 0;
-  font-size: 14px;
 
   @include desktop {
     padding: 80px 0;
-    font-size: 16px;
   }
 }
 
@@ -68,6 +66,8 @@
   @include rightGrotesk(medium);
   background-color: var(--clr-white);
   font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
   padding: 11px 0;
 
   &--black {
@@ -89,5 +89,5 @@
 }
 
 .price__link {
-  //
+  text-decoration: underline;
 }

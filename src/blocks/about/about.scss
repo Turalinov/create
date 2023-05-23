@@ -19,12 +19,15 @@
   @include suisseIntl(book);
   font-size: 18px;
   margin-bottom: 30px;
-  line-height: 1.4;
+  line-height: 25px;
+  letter-spacing: -0.05em;
 
 
   @include desktop() {
-    max-width: 882px;
     font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.03em;
+    max-width: 882px;
   }
 }
 
@@ -93,12 +96,9 @@
 }
 
 .about__subdesc {
-  font-size: 14px;
   margin-top: 20px;
-  line-height: 1.5;
 
   @include desktop() {
-    font-size: 16px;
     margin-top: 30px;
   }
 }

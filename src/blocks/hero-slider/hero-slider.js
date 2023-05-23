@@ -8,8 +8,9 @@ const swiper = new Swiper('.hero-slider', {
   // Optional parameters
   loop: true,
     autoplay: {
-      delay: 5000,
+      delay:3000,
     },
+speed: 2000,
   grabCursor: true,
   spaceBetween: 20,
   // slidesPerView: 1.1, //сколкько видны

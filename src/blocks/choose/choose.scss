@@ -57,14 +57,11 @@
 }
 
 .choose__subdesc {
-  font-size: 14px;
   margin-top: 30px;
   margin-bottom: 30px;
   line-height: 1.5;
 
-  @include desktop() {
-    font-size: 16px;
-  }
+
 }
 
 .choose__btn {

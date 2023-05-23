@@ -10,6 +10,7 @@
 .accordion__item {
   background-color: var(--clr-white);
   padding: 20px;
+  border-radius: 12px;
 
   @include desktop {
     padding: 25px;
@@ -22,15 +23,24 @@
 .accordion__control {
   display: flex;
   justify-content: space-between;
+    align-items: center;
   width: 100%;
 
 }
 .accordion__title {
+  @include suisseIntl(book);
+  color: #0A0A0A;
   font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.05em;
   text-align: left;
+  max-width: 90%;
 
   @include desktop {
     font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.03em;
+    max-width: 95%;
   }
 
 }
@@ -58,6 +68,10 @@
   will-change: max-height;
   transition: all 0.3s ease-out;
   box-sizing: content-box;
+
+  @include desktop {
+    max-width: 900px;
+  }
 }
 
 .open .accordion__content {

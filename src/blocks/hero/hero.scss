@@ -1,10 +1,9 @@
 .hero {
-  padding-top: 87px;
-  font-size: 14px;
+  padding-top: 80px;
+
 
   @include desktop {
-    padding-top: 96px;
-    font-size: 16px;
+    padding-top: 94px;
   }
 
   & > .container {
@@ -27,45 +26,45 @@
 
 .hero__content {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  top: 473px;
+  left: 20px;
+  right: 20px;
   color: var(--clr-white);
 
 
-  &-inner {
-    padding: 20px;
 
-    @include tablets {
-      padding: 30px;
-      padding-top: 60px;
-    }
+  @include desktop {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 80px;
+    right: initial;
 
-    @include desktop {
-      max-width: 490px;
-      padding: 0 0 70px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
-      display: flex;
-      flex-direction: column-reverse;
-    }
+    max-width: 490px;
 
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
 .hero__pagination {
-  margin-bottom: 30px;
+  left: 20px;
+  top: 433px;
+  z-index: 1;
+  position: absolute;
 
   .swiper-pagination-bullet  {
     width: 10px;
     height: 10px;
-    background-color: rgba(0,0,0,0.8);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);;
     & + .swiper-pagination-bullet {
-      margin-left: 20px;
+
+        margin-left: 10px;
     }
   }
 
@@ -73,15 +72,25 @@
   .swiper-pagination-bullet-active {
     background-color: var(--clr-white);
   }
+
+  @include desktop {
+    top: initial;
+    left: 80px;
+    bottom: 72px;
+  }
 }
 
 .hero__title {
-  font-size: 50px;
+  @media screen and (min-width: 300px) {
+    font-size: 43px;
+  }
+  @media screen and (min-width: 411px) {
+    font-size: 57px;
+  }
+
   margin-bottom: 20px;
-  line-height: 1;
 
   @include desktop {
-    font-size: 73px;
   }
 }
 
@@ -100,7 +109,6 @@
 
   @include desktop {
     max-width: 440px;
-    margin-bottom: 130px;
   }
 
   & a {

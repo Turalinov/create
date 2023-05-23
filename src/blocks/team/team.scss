@@ -34,23 +34,25 @@
   @include suisseIntl(book);
   font-size: 18px;
   margin-bottom: 5px;
+  line-height: 25px;
+  letter-spacing: -0.05em;
+  margin-bottom: 5px;
 
   @include desktop() {
     font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.03em;
   }
 }
 
 .team__position {
-  font-size: 14px;
   color: #4E4E4E;
 
-  @include desktop() {
-    font-size: 20px;
-  }
 }
 
 .team__double-wrap {
   text-align: center;
+  padding: 60px 0;
 
   @include desktop() {
     padding: 80px 10px;
@@ -66,10 +68,14 @@
 
 .team__double {
   margin-bottom: 20px;
+
+
 }
 
 .team__link {
-  font-size: 14px;
+  @include desktop {
+    text-decoration: underline;
+  }
 }
 
 

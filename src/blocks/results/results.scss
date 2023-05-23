@@ -1,9 +1,7 @@
 .results {
-  font-size: 14px;
   padding: 50px 0;
 
   @include desktop {
-    font-size: 16px;
     padding: 80px 0;
   }
 
@@ -13,10 +11,33 @@
 }
 
 .results__title {
+}
+
+
+.results .results__title-wrap {
   margin-bottom: 30px;
 
   @include desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-bottom: 60px;
+  }
+
+  .gallery-slider-buttons {
+    display: none;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+}
+
+.results {
+  .gallery-slider-buttons {
+    @include desktop {
+      display: none;
+    }
   }
 }
 

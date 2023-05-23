@@ -3,13 +3,22 @@
 }
 
 .logo__link {
-
-}
-
-.logo__img {
+  display: block;
+  width: 100px;
   height: 20px;
 
   @include desktop {
+    width: 140px;
+    height: 28px;
+  }
+}
+
+.logo__img {
+  width: 100px;
+  height: 20px;
+
+  @include desktop {
+    width: 140px;
     height: 28px;
   }
 }

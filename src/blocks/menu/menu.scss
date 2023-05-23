@@ -42,12 +42,14 @@
           font-size: 20px;
           display: block;
           @include rightGrotesk();
+          line-height: 24px;
+          letter-spacing: -0.04em;
           padding: 20px 0;
 
           @include desktop {
             @include suisseIntl()
             font-size: 16px;
-
+            padding:  0;
 
           }
 
@@ -68,8 +70,8 @@
 .menu__submenu {
   @include desktop {
     position: absolute;
-    overflow: hidden;
     right: 0;
+    top: 60px;
     max-height: 0;
     opacity: 0;
     padding: 0;
@@ -81,12 +83,14 @@
     width: 100%;
     border-radius: 0px 0px 0px 12px;
     box-shadow: 4px 4px 4px rgba(239, 239, 239, 0.15);
+    pointer-events: none;
   }
 }
 
 .menu__submenu.active {
   @include desktop {
     opacity: 1;
+    pointer-events: initial;
   }
 }
 
@@ -94,18 +98,19 @@
   @include desktop {
     display: flex;
     justify-content: space-between;
-    padding: 40px 85px 50px 60px;
+    padding: 40px 87px 50px 60px;
   }
 
   .sub-menu {
     column-count: 2;
     column-gap: 20px;
-    font-size: 14px;
     padding: 20px 0 40px;
+    max-width: 100%;
 
     @include desktop {
       column-gap: 100px;
       padding: 0;
+      max-width: 512px;
     }
 
     & > li:not(:last-child) {
