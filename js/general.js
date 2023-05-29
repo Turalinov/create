@@ -277,8 +277,16 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function form() {
+  //удаление placeholder-а
+  var inputs = document.querySelectorAll('input[type="text"]');
+  inputs.forEach(function (input) {
+    input.addEventListener('focus', function (e) {
+      e.currentTarget.placeholder = "";
+    });
+  });
   var forms = document.querySelectorAll('.js-form');
-  var phoneMask;
+  // let phoneMask;
+
   var errorsStatus = {
     nameNotDigit: 'Имя не должно содержать цифры',
     nameEmpty: 'Имя не должно быть пустым',
@@ -310,7 +318,7 @@ function form() {
           console.log(err);
           statusMessage.innerText = message.failure;
         })["finally"](function () {
-          phoneMask.masked.reset();
+          // phoneMask.masked.reset();
           form.reset();
           setTimeout(function () {
             statusMessage.remove();
@@ -324,11 +332,13 @@ function form() {
       var emailInput = form.querySelector('.js-email-input');
       var errorContainer = form.querySelector('.js-error-container');
       var btn = form.querySelector('button.btn');
-      phoneMask = Object(imask__WEBPACK_IMPORTED_MODULE_0__["default"])(phoneInput, {
-        mask: '0 (000) – 000 – 00 – 00',
-        placeholderChar: '_',
-        lazy: false
-      });
+
+      // phoneMask = IMask(phoneInput, {
+      //   mask: '0 (000) – 000 – 00 – 00',
+      //   placeholderChar: '_',
+      //   lazy: false,
+      // });
+
       phoneInput.addEventListener("input", inputHandler);
       nameInput.addEventListener("input", inputHandler);
       emailInput.addEventListener("input", inputHandler);
@@ -346,26 +356,37 @@ function form() {
             nameInput.classList.remove('error');
           }
         }
-        if (!phoneMask.masked.isComplete) {
-          var phoneVal = phoneMask.unmaskedValue;
-          console.log(phoneVal[0]);
-          if (!(phoneVal[0] == 7 || phoneVal[0] == 8)) {
-            errors.push(errorsStatus.phoneFirstNotCorrect);
-            phoneInput.classList.add('error');
-          } else {
-            phoneInput.classList.remove('error');
-          }
-          if (!(phoneVal[1] == 9)) {
-            errors.push(errorsStatus.phoneSecondNotCorrect);
-            phoneInput.classList.add('error');
-          } else {
-            phoneInput.classList.remove('error');
-          }
-          errors.push(errorsStatus.phoneNotCorrect);
-          phoneInput.classList.add('error');
-        } else {
-          phoneInput.classList.remove('error');
-        }
+
+        // if(!(phoneMask.masked.isComplete)) {
+
+        //   let phoneVal = phoneMask.unmaskedValue;
+
+        //   console.log(phoneVal[0] );
+
+        //   if (!(phoneVal[0] == 7 || phoneVal[0] ==8 )) {
+        //     errors.push(errorsStatus.phoneFirstNotCorrect)
+        //     phoneInput.classList.add('error')
+        //   } else {
+        //     phoneInput.classList.remove('error')
+        //   }
+
+        //   if (!(phoneVal[1] == 9)) {
+        //     errors.push(errorsStatus.phoneSecondNotCorrect)
+        //     phoneInput.classList.add('error')
+        //   } else {
+        //     phoneInput.classList.remove('error')
+        //   }
+
+        //   errors.push(errorsStatus.phoneNotCorrect);
+
+        //   phoneInput.classList.add('error')
+
+        // } else {
+
+        //   phoneInput.classList.remove('error')
+
+        // }
+
         if (!isValidEmail(emailInput.value)) {
           errors.push(errorsStatus.emailNotCorrect);
           emailInput.classList.add('error');
