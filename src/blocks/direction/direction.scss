@@ -54,10 +54,16 @@
 }
 
 .direction__title {
-  font-size: 41px;
+  font-size: 31px;
   margin-bottom: 25px;
   line-height: 1;
   letter-spacing: -0.02em;
+
+  @media screen and (min-width: 410px) {
+    font-size: 41px;
+  }
+
+
 
   @include desktop {
     font-size: 54px;

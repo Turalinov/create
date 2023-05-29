@@ -8,10 +8,29 @@
     height: 460px;
   }
 }
+
+.video.pause {
+  .video__preview {
+    display: block;
+  }
+
+  .video__btn {
+    display: block;
+  }
+}
+
 .video__preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
   height: 100%;
+  display: none;
 }
 .video__preview-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top;
 }
@@ -29,6 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 
   @include desktop {
     width: 100px;
@@ -43,9 +63,15 @@
 }
 
 .video__elem {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  // width: 100%;
-  // height: 100%;
+  // position: absolute;
+  width: 100%;
+  height: 100%;
+  // top: 0;
+  // left: 0;
+  background-color: red;
+
+  &-inner {
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -3,12 +3,12 @@ export default function preloader() {
   document.addEventListener('DOMContentLoaded', () => {
 
     const preloader = document.querySelector('#preloader')
-    console.log('dom')
-    const mediaFiles = document.querySelectorAll('img');
-    console.log(mediaFiles);
+    // console.log('dom')
+    // const mediaFiles = document.querySelectorAll('img');
+    // console.log(mediaFiles);
 
 
-    let i = 0;
+    // let i = 0;
 
 
     function simulateProgress() {
@@ -26,35 +26,35 @@ export default function preloader() {
            preloader.classList.add('hide');
           document.querySelector('body').classList.remove('lock');
         }
-      }, 30);
+      }, 10);
     }
 
+    simulateProgress();
+
+
+    // mediaFiles.forEach((file, index) => {
+
+    //   if(file.complete){
+    //     simulateProgress();
+    //     console.log('С КЭША');
+    //   } else {
+    //     file.onload = function() {
+    //     i++;
+
+    //     preloader__percent.innerHTML = ((i *100) / mediaFiles.length).toFixed();
+    //     preloader__progress.style.width = ((i *100) / mediaFiles.length).toFixed() + `px`;
+
+
+    //    if (i === mediaFiles.length) {
+    //       preloader.classList.add('hide');
+    //       document.querySelector('body').classList.remove('lock');      preloader__percent.innerHTML = 100;
+    //       preloader__progress.style.width = 100 + `px`;
+    //    }
+    //   }
+    //   }
 
 
 
-    mediaFiles.forEach((file, index) => {
-
-      if(file.complete){
-        simulateProgress();
-        console.log('С КЭША');
-      } else {
-        file.onload = function() {
-        i++;
-
-        preloader__percent.innerHTML = ((i *100) / mediaFiles.length).toFixed();
-        preloader__progress.style.width = ((i *100) / mediaFiles.length).toFixed() + `px`;
-
-
-       if (i === mediaFiles.length) {
-          preloader.classList.add('hide');
-          document.querySelector('body').classList.remove('lock');      preloader__percent.innerHTML = 100;
-          preloader__progress.style.width = 100 + `px`;
-       }
-      }
-      }
-
-
-
-    })
+    // })
   })
 }

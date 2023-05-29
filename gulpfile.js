@@ -11,7 +11,7 @@ const serve = require("./gulp/task/serve");
 const sprite = require("./gulp/task/sprite");
 const watch = require("./gulp/task/watch");
 const hash = require("./gulp/task/hash");
-const webp = require("./gulp/task/wepb");
+// const webp = require("./gulp/task/wepb");
 const dep = require("./gulp/task/deploy");
 const vendor = require("./gulp/task/vendor");
 
@@ -26,7 +26,7 @@ module.exports.dev = gulp.series(
     style,
     scripts,
     sprite,
-    webp,
+    // webp,
     vendor
   ),
   gulp.parallel(
@@ -46,7 +46,7 @@ module.exports.build = gulp.series(
     style,
     scripts,
     sprite,
-    webp,
+    // webp,
     vendor
   ),
   hash

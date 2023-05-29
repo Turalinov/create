@@ -21,6 +21,8 @@ import heroSlider from '%modules%/hero-slider/hero-slider'
 import opinionSlider from '%modules%/opinion-slider/opinion-slider'
 //direction
 import direction from '%modules%/direction/direction';
+//footer
+import footer from '%modules%/footer/footer';
 
 
 preloader();
@@ -33,3 +35,4 @@ video();
 heroSlider();
 opinionSlider();
 direction();
+footer();

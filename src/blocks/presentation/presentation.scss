@@ -1,0 +1,18 @@
+.presentation {
+  .container {
+    padding: 0;
+
+    @include desktop {
+
+    }
+  }
+
+}
+.presentation__video.video {
+  height: 628px;
+  border-radius: 0;
+
+  @include desktop {
+   height: 750px;
+  }
+}
