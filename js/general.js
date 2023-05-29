@@ -234,6 +234,32 @@ function direction() {
 
 /***/ }),
 
+/***/ "./src/blocks/footer/footer.js":
+/*!*************************************!*\
+  !*** ./src/blocks/footer/footer.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return footer; });
+function footer() {
+  var shellVisible = true;
+  var shell = document.querySelector('.footer__shell');
+  var map = document.querySelector('.footer__map');
+  map.addEventListener('click', function (e) {
+    if (shellVisible) {
+      shell.style.display = 'none';
+    } else {
+      shell.style.display = 'block';
+    }
+    shellVisible = !shellVisible;
+  });
+}
+
+/***/ }),
+
 /***/ "./src/blocks/form/form.js":
 /*!*********************************!*\
   !*** ./src/blocks/form/form.js ***!
@@ -729,10 +755,12 @@ function preloader() {
   console.log('preload');
   document.addEventListener('DOMContentLoaded', function () {
     var preloader = document.querySelector('#preloader');
-    console.log('dom');
-    var mediaFiles = document.querySelectorAll('img');
-    console.log(mediaFiles);
-    var i = 0;
+    // console.log('dom')
+    // const mediaFiles = document.querySelectorAll('img');
+    // console.log(mediaFiles);
+
+    // let i = 0;
+
     function simulateProgress() {
       var progress = 0;
       var interval = setInterval(function () {
@@ -744,26 +772,31 @@ function preloader() {
           preloader.classList.add('hide');
           document.querySelector('body').classList.remove('lock');
         }
-      }, 30);
+      }, 10);
     }
-    mediaFiles.forEach(function (file, index) {
-      if (file.complete) {
-        simulateProgress();
-        console.log('С КЭША');
-      } else {
-        file.onload = function () {
-          i++;
-          preloader__percent.innerHTML = (i * 100 / mediaFiles.length).toFixed();
-          preloader__progress.style.width = (i * 100 / mediaFiles.length).toFixed() + "px";
-          if (i === mediaFiles.length) {
-            preloader.classList.add('hide');
-            document.querySelector('body').classList.remove('lock');
-            preloader__percent.innerHTML = 100;
-            preloader__progress.style.width = 100 + "px";
-          }
-        };
-      }
-    });
+    simulateProgress();
+
+    // mediaFiles.forEach((file, index) => {
+
+    //   if(file.complete){
+    //     simulateProgress();
+    //     console.log('С КЭША');
+    //   } else {
+    //     file.onload = function() {
+    //     i++;
+
+    //     preloader__percent.innerHTML = ((i *100) / mediaFiles.length).toFixed();
+    //     preloader__progress.style.width = ((i *100) / mediaFiles.length).toFixed() + `px`;
+
+    //    if (i === mediaFiles.length) {
+    //       preloader.classList.add('hide');
+    //       document.querySelector('body').classList.remove('lock');      preloader__percent.innerHTML = 100;
+    //       preloader__progress.style.width = 100 + `px`;
+    //    }
+    //   }
+    //   }
+
+    // })
   });
 }
 
@@ -810,340 +843,80 @@ function toggle() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return video; });
-/* harmony import */ var _youtube_youtube__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../youtube/youtube */ "./src/blocks/youtube/youtube.js");
-
-
-// https://youtu.be/
-// <!-- 1. <iframe> (и видеопроигрыватель) заменит этот тег <div>. -->
 function video() {
-  //     "use strict";
-  //     document.addEventListener('DOMContentLoaded', function() {
-  //    // 2. Этот код асинхронно загружает код API IFrame Player.
-  //       var tag = document.createElement('script');
+  console.log('video');
 
-  //       tag.src = "https://www.youtube.com/iframe_api";
-  //       var firstScriptTag = document.getElementsByTagName('script')[0];
-  //       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  // 2. Этот код асинхронно загружает код API IFrame Player.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  console.log(firstScriptTag);
 
-  // // 3. Эта функция создает <iframe> (и проигрыватель YouTube) //    после загрузки кода API.
-  //       function onYouTubeIframeAPIReady() {
-  //         console.log('апи загрузилось')
+  // Глобальная переменная для хранения состояния загрузки API
+  var apiLoaded = false;
 
-  //         for (let video of document.querySelectorAll(".video")) {
-  //           let player;
-
-  //           const btn = video.querySelector('.video__btn');
-  //           const playerFrame = video.querySelector('.video__elem iframe')
-
-  //           player = new YT.Player(playerFrame, {
-  //             events: {
-  //               'onStateChange': onPlayerStateChange,
-  //             }
-  //           });
-
-  //           let onPlayerStateChange = function(event) {
-  //             if (event.data == YT.PlayerState.ENDED) {
-  //                 video.classList.add("ended");
-  //             } else if (event.data == YT.PlayerState.PAUSED) {
-  //                 video.classList.add("paused");
-  //             } else if (event.data == YT.PlayerState.PLAYING) {
-  //                 video.classList.remove("ended");
-  //                 video.classList.remove("paused");
-  //             }
-  //         };
-
-  //         btn.addEventListener("click", function() {
-  //             console.log({player})
-  //                 let playerState = player.getPlayerState();
-
-  //             console.log({playerState})
-  //                 if (playerState == YT.PlayerState.ENDED) {
-  //                     player.seekTo(0);
-  //                 } else if (playerState == YT.PlayerState.PAUSED) {
-  //                     player.playVideo();
-  //                 }
-  //             });
-
-  //           }
-
-  //           // function stopVideo() {
-  //           //   player.stopVideo();
-  //           // }
-
-  //           // function playVideo() {
-  //           //   player.playVideo();
-  //           // }
-
-  //         }
-
-  // }
-
-  // // Activate only if not already activated
-  //     if (window.hideYTActivated) return;
-  //     // Load API
-  //     if (typeof YT === 'undefined') {
-  //         let tag = document.createElement('script');
-  //         tag.src = "https://www.youtube.com/iframe_api";
-  //         let firstScriptTag = document.getElementsByTagName('script')[0];
-  //         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  //     }
-  //     // Activate on all players
-
-  //      window.onYouTubeIframeAPIReady = function() {
-  //           for (let video of document.querySelectorAll(".video")) {
-
-  //         const btn = video.querySelector('.video__btn');
-
-  //         const playerFrame = video.querySelector('.video__elem iframe')
-
-  //         // let playerFrame = playerWrap.querySelector("iframe");
-  //         console.log({
-  //           playerFrame
-  //         })
-
-  //         let onPlayerStateChange = function(event) {
-  //             if (event.data == YT.PlayerState.ENDED) {
-  //                 video.classList.add("ended");
-  //             } else if (event.data == YT.PlayerState.PAUSED) {
-  //                 video.classList.add("paused");
-  //             } else if (event.data == YT.PlayerState.PLAYING) {
-  //                 video.classList.remove("ended");
-  //                 video.classList.remove("paused");
-  //             }
-  //         };
-
-  //         let player;
-  //         onYouTubeIframeAPIReadyCallbacks.push(function() {
-  //             player = new YT.Player(playerFrame, {
-  //                 events: {
-  //                     'onStateChange': onPlayerStateChange
-  //                 }
-  //             });
-  //         });
-
-  //         // function stopVideo() {
-  //         //      event.target.stopVideo();
-  //         // }
-
-  //         //   function playVideo() {
-  //         //      event.target.playVideo();
-  //         //   }
-
-  //         btn.addEventListener("click", function() {
-  //           let playerState = player.getPlayerState();
-
-  //           // if (!video.classList.contains('play')) {
-  //           //   video.classList.add('play')
-  //           //   playVideo
-  //           // } else {
-  //           //   video.classList.remove('play')
-  //           // }
-
-  //             if (playerState == YT.PlayerState.ENDED) {
-  //                 player.seekTo(0);
-  //             } else if (playerState == YT.PlayerState.PAUSED) {
-  //                 player.playVideo();
-  //             }
-  //         });
-  //     }
-
-  //     };
-
-  //     window.hideYTActivated = true;
-
-  // });
-}
-
-/***/ }),
-
-/***/ "./src/blocks/youtube/youtube.js":
-/*!***************************************!*\
-  !*** ./src/blocks/youtube/youtube.js ***!
-  \***************************************/
-/*! exports provided: YT, YTCollection */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "YT", function() { return YT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "YTCollection", function() { return YTCollection; });
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-// https://github.com/alexsaranin/ege-oge/blob/all-correcting/src/js/libs/sliders/index.js
-
-var PLAYER_STATE = {
-  ENDED: 0,
-  PLAY: 1,
-  PAUSE: 2
-};
-var target = 'https://www.youtube.com';
-var currentId = 0;
-var YT = /*#__PURE__*/function () {
-  function YT(link) {
-    _classCallCheck(this, YT);
-    this.src = link.split('?v=')[1];
-    this.el = this.createElement();
-    this.id = currentId.toString(); // обязательно строка
-    currentId = currentId + 1;
-    return this;
-  }
-  _createClass(YT, [{
-    key: "createElement",
-    value: function createElement() {
-      var iframe = document.createElement('iframe');
-      iframe.width = '560';
-      iframe.height = '315';
-      iframe.src = "https://www.youtube.com/embed/".concat(this.src, "?rel=0&enablejsapi=1");
-      iframe.frameborder = '0';
-      return iframe;
-    }
-  }, {
-    key: "postMessage",
-    value: function postMessage(msg) {
-      console.log(this.el);
-      return this.el.contentWindow.postMessage(JSON.stringify(msg), target);
-    }
-  }, {
-    key: "listening",
-    value: function listening() {
-      var msg = {
-        event: 'listening',
-        id: this.id,
-        channel: 'widget'
-      };
-      this.postMessage(msg);
-    }
-  }, {
-    key: "onStateChange",
-    value: function onStateChange() {
-      var msg = {
-        event: 'command',
-        func: 'addEventListener',
-        args: ['onStateChange'],
-        id: this.id,
-        channel: 'widget'
-      };
-      this.postMessage(msg);
-    }
-  }, {
-    key: "stop",
-    value: function stop() {
-      var msg = {
-        event: 'command',
-        func: 'stopVideo',
-        args: ''
-      };
-      this.postMessage(msg);
-    }
-  }, {
-    key: "pause",
-    value: function pause() {
-      var msg = {
-        event: 'command',
-        func: 'pauseVideo',
-        args: ''
-      };
-      this.postMessage(msg);
-    }
-  }, {
-    key: "play",
-    value: function play() {
-      var msg = {
-        event: 'command',
-        func: 'playVideo',
-        args: ''
-      };
-      this.postMessage(msg);
-    }
-  }, {
-    key: "unmute",
-    value: function unmute() {
-      //
-    }
-  }, {
-    key: "load",
-    value: function load() {
-      var _this = this;
-      this.el.addEventListener('load', function () {
-        _this.onStateChange();
-        _this.listening();
-        _this.play();
-      });
-    }
-  }]);
-  return YT;
-}();
-var YTCollection = /*#__PURE__*/function () {
-  function YTCollection() {
-    _classCallCheck(this, YTCollection);
-    _defineProperty(this, "items", []);
-    this.messageListener();
-  }
-  _createClass(YTCollection, [{
-    key: "create",
-    value: function create(link) {
-      var yT = new YT(link);
-      yT.load();
-      this.items.push(yT);
-      return yT;
-    }
-  }, {
-    key: "findById",
-    value: function findById(id) {
-      return this.items.find(function (item) {
-        return item.id === id;
-      });
-    }
-  }, {
-    key: "pauseAll",
-    value: function pauseAll() {
-      this.items.forEach(function (item) {
-        item.pause();
-      });
-    }
-  }, {
-    key: "subscribePause",
-    value: function subscribePause(cb) {
-      this.pauseCallback = cb;
-    }
-  }, {
-    key: "subscribePlay",
-    value: function subscribePlay(cb) {
-      this.playCallback = cb;
-    }
-  }, {
-    key: "messageListener",
-    value: function messageListener() {
-      var _this2 = this;
-      window.addEventListener('message', function (e) {
-        if (e.origin !== target || e.data === undefined) return;
-        var data = JSON.parse(e.data);
-        if (data.event !== 'onStateChange') return;
-        var yT = _this2.findById(data.id);
-        try {
-          switch (data.info) {
-            case PLAYER_STATE.PAUSE:
-            case PLAYER_STATE.ENDED:
-              _this2.pauseCallback(yT);
-              break;
-            case PLAYER_STATE.PLAY:
-              _this2.playCallback(yT);
-              break;
-          }
-        } catch (e) {
-          //
+  // Функция, которая будет вызвана после загрузки API
+  window.onYouTubeIframeAPIReady = function () {
+    apiLoaded = true;
+    init();
+  };
+  function init() {
+    var videos = document.querySelectorAll('.video');
+    videos.forEach(function (video) {
+      var player;
+      var videoElem = video.querySelector('.video__elem');
+      var videoId = video.getAttribute('data-id');
+      if (apiLoaded) {
+        console.log('YouTube API загружено.');
+        if (!player) {
+          console.log('player создание');
+          // Создаем объект плеера YouTube
+          player = new YT.Player(videoElem, {
+            height: '360',
+            width: '640',
+            playerVars: {
+              'controls': 0
+            },
+            videoId: videoId,
+            // Замените VIDEO_ID на идентификатор YouTube видео
+            events: {
+              'onStateChange': onPlayerStateChange
+            }
+          });
+        } else {
+          console.log('player существует');
+        }
+      } else {
+        console.error('YouTube API не загружено.');
+      }
+      function playVideo() {
+        player.playVideo();
+      }
+      function stopVideo() {
+        player.pauseVideo();
+      }
+      function onPlayerStateChange(event) {
+        //-1 = не начато , 0 = завершено, 2 = пауза
+        if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+          stopVideo();
+          video.classList.add('pause');
+        }
+      }
+      var btn = video.querySelector('.video__btn');
+      // Добавляем обработчик события клика на video__btn
+      btn.addEventListener('click', function (e) {
+        video.classList.toggle('pause');
+        if (!video.classList.contains('pause')) {
+          playVideo();
+        } else {
+          console.log('есть pause');
+          console.log(player);
         }
       });
-    }
-  }]);
-  return YTCollection;
-}();
-
+    });
+  }
+}
 
 /***/ }),
 
@@ -1166,6 +939,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_hero_slider_hero_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/hero-slider/hero-slider */ "./src/blocks/hero-slider/hero-slider.js");
 /* harmony import */ var _modules_opinion_slider_opinion_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/opinion-slider/opinion-slider */ "./src/blocks/opinion-slider/opinion-slider.js");
 /* harmony import */ var _modules_direction_direction__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/direction/direction */ "./src/blocks/direction/direction.js");
+/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/footer/footer.js");
 //preloader
 
 //toggle
@@ -1187,6 +961,8 @@ __webpack_require__.r(__webpack_exports__);
 
 //direction
 
+//footer
+
 Object(_modules_preloader_preloader__WEBPACK_IMPORTED_MODULE_0__["default"])();
 Object(_modules_toggle_toggle__WEBPACK_IMPORTED_MODULE_1__["default"])();
 Object(_modules_menu_menu__WEBPACK_IMPORTED_MODULE_2__["default"])();
@@ -1197,6 +973,7 @@ Object(_modules_video_video__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_modules_hero_slider_hero_slider__WEBPACK_IMPORTED_MODULE_7__["default"])();
 Object(_modules_opinion_slider_opinion_slider__WEBPACK_IMPORTED_MODULE_8__["default"])();
 Object(_modules_direction_direction__WEBPACK_IMPORTED_MODULE_9__["default"])();
+Object(_modules_footer_footer__WEBPACK_IMPORTED_MODULE_10__["default"])();
 
 /***/ })
 

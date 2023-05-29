@@ -2007,16 +2007,30 @@ input[type=text], input[type=email], input[type=tel] {
       column-gap: 130px; } }
 
 .footer__map {
-  margin-bottom: 20px; }
+  position: relative;
+  margin-bottom: 20px;
+  height: 374px;
+  width: 100%; }
   @media screen and (min-width: 1200px) {
     .footer__map {
-      margin-bottom: initial; } }
-  .footer__map iframe {
-    height: 374px;
-    width: 100%; }
-    @media screen and (min-width: 1200px) {
-      .footer__map iframe {
-        height: 550px; } }
+      margin-bottom: initial;
+      height: 550px; } }
+
+.footer__map iframe {
+  height: 374px;
+  width: 100%; }
+  @media screen and (min-width: 1200px) {
+    .footer__map iframe {
+      height: 550px; } }
+
+.footer__shell {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  display: block; }
 
 .footer__copyright {
   color: #4E4E4E;
@@ -2086,10 +2100,13 @@ input[type=text], input[type=email], input[type=tel] {
       margin-left: 110px; } }
 
 .direction__title {
-  font-size: 41px;
+  font-size: 31px;
   margin-bottom: 25px;
   line-height: 1;
   letter-spacing: -0.02em; }
+  @media screen and (min-width: 410px) {
+    .direction__title {
+      font-size: 41px; } }
   @media screen and (min-width: 1200px) {
     .direction__title {
       font-size: 54px;
@@ -2565,6 +2582,9 @@ input[type=text], input[type=email], input[type=tel] {
 .gallery-slider__text {
   margin-top: 20px; }
 
+.gallery-slider__photo.photo {
+  border-radius: 0; }
+
 .video {
   position: relative;
   height: 225px;
@@ -2574,10 +2594,24 @@ input[type=text], input[type=email], input[type=tel] {
     .video {
       height: 460px; } }
 
+.video.pause .video__preview {
+  display: block; }
+
+.video.pause .video__btn {
+  display: block; }
+
 .video__preview {
-  height: 100%; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: none; }
 
 .video__preview-img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: top;
@@ -2594,7 +2628,8 @@ input[type=text], input[type=email], input[type=tel] {
   height: 60px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  display: none; }
   @media screen and (min-width: 1200px) {
     .video__btn {
       width: 100px;
@@ -2605,9 +2640,12 @@ input[type=text], input[type=email], input[type=tel] {
     height: 24px; }
 
 .video__elem {
-  position: absolute;
-  top: 50%;
-  left: 50%; }
+  width: 100%;
+  height: 100%;
+  background-color: red; }
+  .video__elem-inner {
+    width: 100%;
+    height: 100%; }
 
 .reviews {
   padding: 50px 0; }
@@ -2853,6 +2891,16 @@ input[type=text], input[type=email], input[type=tel] {
 
 .advantages__subtitle {
   margin-bottom: 20px; }
+
+.presentation .container {
+  padding: 0; }
+
+.presentation__video.video {
+  height: 628px;
+  border-radius: 0; }
+  @media screen and (min-width: 1200px) {
+    .presentation__video.video {
+      height: 750px; } }
 
 .visually-hidden {
   position: absolute !important;
