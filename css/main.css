@@ -1149,7 +1149,7 @@ input[type=text], input[type=email], input[type=tel] {
     display: none; }
   .header.active .header__toggle.toggle::before, .header.active .header__toggle.toggle::after {
     top: 50%;
-    transition: all 0.3s; }
+    transition: all 0.5s ease; }
   .header.active .header__toggle.toggle::before {
     transform: translate(-50%, -50%) rotate(45deg); }
   .header.active .header__toggle.toggle::after {
@@ -1261,7 +1261,7 @@ input[type=text], input[type=email], input[type=tel] {
     width: 35px;
     height: 1.5px;
     background-color: #000000;
-    transition: all 0.8s ease;
+    transition: all 0.5s ease;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px; }
@@ -1279,7 +1279,7 @@ input[type=text], input[type=email], input[type=tel] {
   height: 1.5px;
   background-color: #000000;
   transform: translate(-50%, -50%);
-  transition: all 0.8s ease;
+  transition: all 0.5s ease;
   border-radius: 2px; }
 
 @media screen and (min-width: 1200px) {
