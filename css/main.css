@@ -1250,15 +1250,15 @@ input[type=text], input[type=email], input[type=tel] {
 
 .toggle {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
   .toggle::before, .toggle::after {
     content: "";
     position: absolute;
-    width: 30px;
+    width: 45px;
     height: 2px;
     background-color: #000000;
     transition: all 0.3s;
@@ -1266,16 +1266,16 @@ input[type=text], input[type=email], input[type=tel] {
     transform: translateX(-50%);
     border-radius: 2px; }
   .toggle::before {
-    top: 5px; }
+    top: 10px; }
   .toggle::after {
-    bottom: 5px; }
+    bottom: 10px; }
 
 .toggle__inner {
   position: absolute;
   display: block;
   top: 50%;
   left: 50%;
-  width: 30px;
+  width: 45px;
   height: 2px;
   background-color: #000000;
   transform: translate(-50%, -50%);
