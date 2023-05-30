@@ -1250,33 +1250,33 @@ input[type=text], input[type=email], input[type=tel] {
 
 .toggle {
   position: relative;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
   .toggle::before, .toggle::after {
     content: "";
     position: absolute;
-    width: 45px;
-    height: 2px;
+    width: 35px;
+    height: 1px;
     background-color: #000000;
     transition: all 0.3s;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px; }
   .toggle::before {
-    top: 10px; }
+    top: 8px; }
   .toggle::after {
-    bottom: 10px; }
+    bottom: 8px; }
 
 .toggle__inner {
   position: absolute;
   display: block;
   top: 50%;
   left: 50%;
-  width: 45px;
-  height: 2px;
+  width: 35px;
+  height: 1px;
   background-color: #000000;
   transform: translate(-50%, -50%);
   transition: all 0.3s;
