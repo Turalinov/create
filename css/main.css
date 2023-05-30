@@ -970,15 +970,11 @@ button {
 
 input[type=text], input[type=email], input[type=tel] {
   text-align: center;
-  border: 1px solid #BDBDBD;
-  border-radius: 12px;
+  border: none;
   width: 100%;
   line-height: 1.5;
-  padding: 17px;
-  transition: .3s; }
-  @media screen and (min-width: 1200px) {
-    input[type=text], input[type=email], input[type=tel] {
-      padding: 23px; } }
+  background-color: transparent;
+  color: var(--clr-black); }
   input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=tel]::-moz-placeholder {
     color: #4E4E4E; }
   input[type=text]::placeholder, input[type=email]::placeholder, input[type=tel]::placeholder {
@@ -1865,7 +1861,11 @@ input[type=text], input[type=email], input[type=tel] {
 
 .form__block {
   box-sizing: border-box;
-  flex: 1; }
+  flex: 1;
+  border: 1px solid #BDBDBD;
+  border-radius: 12px;
+  padding: 17px;
+  transition: .3s; }
   .form__block + .form__block {
     margin-top: 15px; }
     @media screen and (min-width: 1200px) {
@@ -1873,18 +1873,25 @@ input[type=text], input[type=email], input[type=tel] {
         margin-top: initial;
         margin-left: 20px; } }
 
-.form__input.error {
-  border-color: var(--clr-orange); }
+.form__block.error {
+  border: 1px solid #FF650E; }
+
+.form__input-error {
+  display: none;
+  text-align: center;
+  font-size: 9px;
+  line-height: 9px; }
+  @media screen and (min-width: 1200px) {
+    .form__input-error {
+      font-size: 10px;
+      line-height: 14px; } }
+  .form__input-error.active {
+    display: block; }
 
 .form__message {
   font-size: 16px;
   font-weight: 700;
   margin-top: 5px; }
-
-.form__input-error {
-  font-size: 14px;
-  color: red;
-  margin: 0 5px; }
 
 .form__btn {
   padding: 17px; }

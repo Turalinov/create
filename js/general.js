@@ -270,153 +270,185 @@ function footer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return form; });
-/* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! imask */ "./node_modules/imask/esm/index.js");
+/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/dist/inputmask.js");
+/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+// import IMask from 'imask';
 
 function form() {
-  //удаление placeholder-а
   var inputs = document.querySelectorAll('input[type="text"]');
   inputs.forEach(function (input) {
+    var placeholder = '';
     input.addEventListener('focus', function (e) {
+      placeholder = e.currentTarget.placeholder;
       e.currentTarget.placeholder = "";
+    });
+    input.addEventListener('blur', function (e) {
+      e.currentTarget.placeholder = placeholder;
     });
   });
   var forms = document.querySelectorAll('.js-form');
-  // let phoneMask;
-
-  var errorsStatus = {
-    nameNotDigit: 'Имя не должно содержать цифры',
-    nameEmpty: 'Имя не должно быть пустым',
-    phoneNotCorrect: 'Проверьте правильность номера',
-    phoneFirstNotCorrect: 'Номер телефона должен начинаться с 7 или 8',
-    phoneSecondNotCorrect: 'Вторая цифра должна быть 9',
-    emailNotCorrect: 'Проверьте правильность почты'
-  };
   var message = {
     loading: 'Загрузка данных',
     success: 'Спасибо, ваша заявка принята! Наш менеджер свяжется с вами в ближайшее время',
     failure: "Что-то пошло не так, обратитесь к администратору сайта"
   };
   if (forms.length > 0) {
+    var bindHandlerInputName = function bindHandlerInputName(form) {
+      var nameInput = form.querySelector('.js-name-input');
+      var errorHtml = nameInput.nextElementSibling;
+      var formBlock = nameInput.closest('.form__block');
+      nameInput.addEventListener('input', function (e) {
+        if (nameInput.value == '' || /\d/.test(nameInput.value)) {
+          errorHtml.classList.add('active');
+          formBlock.classList.add('error');
+        } else {
+          errorHtml.classList.remove('active');
+          formBlock.classList.remove('error');
+        }
+      });
+    };
+    var addMaskPhone = function addMaskPhone(form) {
+      var phoneInput = form.querySelector('.js-phone-input');
+      var im = new inputmask__WEBPACK_IMPORTED_MODULE_0___default.a("9 (999) – 999 – 99 – 99", {
+        definitions: {
+          '9': {
+            validator: function validator(chrs, buffer, pos, strict, opts) {
+              if (pos === 0) {
+                return /[78]/.test(chrs);
+              }
+              if (pos === 3) {
+                return /[9]/.test(chrs);
+              }
+              return /[0-9]/.test(chrs);
+            }
+          }
+        }
+      });
+      im.mask(phoneInput);
+      var errorHtml = phoneInput.nextElementSibling;
+      var formBlock = phoneInput.closest('.form__block');
+
+      // проверка
+      phoneInput.addEventListener('input', function (e) {
+        var isCompleted = phoneInput.inputmask.isComplete();
+        if (isCompleted) {
+          console.log('Input mask is completed.');
+          errorHtml.classList.remove('active');
+          formBlock.classList.remove('error');
+          return true;
+          //получить
+        } else {
+          console.log('Input mask is not completed.');
+          errorHtml.classList.add('active');
+          formBlock.classList.add('error');
+          return false;
+        }
+      });
+    };
+    var bindHandlerInputEmail = function bindHandlerInputEmail(form) {
+      var emailInput = form.querySelector('.js-email-input');
+      var errorHtml = emailInput.nextElementSibling;
+      var formBlock = emailInput.closest('.form__block');
+      emailInput.addEventListener('input', function (e) {
+        if (!isValidEmail(emailInput.value)) {
+          errorHtml.classList.add('active');
+          formBlock.classList.add('error');
+        } else {
+          errorHtml.classList.remove('active');
+          formBlock.classList.remove('error');
+        }
+      });
+    };
+    var isValidEmail = function isValidEmail(email) {
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
     var bindPostData = function bindPostData(form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var btn = form.querySelector('button.btn');
-        var statusMessage = document.createElement('div');
-        statusMessage.classList.add('form__message');
-        statusMessage.innerText = message.loading;
-        form.insertAdjacentElement("afterend", statusMessage);
-        btn.disabled = true;
-        var formData = new FormData(form);
-        postData("vendor/mail.php", formData).then(function (data) {
-          console.log(data);
-          statusMessage.innerText = message.success;
-        })["catch"](function (err) {
-          console.log(err);
-          statusMessage.innerText = message.failure;
-        })["finally"](function () {
-          // phoneMask.masked.reset();
-          form.reset();
-          setTimeout(function () {
-            statusMessage.remove();
-          }, 4000);
-        });
+        var checkName = checkValidateName(form);
+        var checkPhone = checkValidatePhone(form);
+        var checkEmail = checkValidateEmail(form);
+        if (checkName && checkPhone && checkEmail) {
+          var btn = form.querySelector('button.btn');
+          var statusMessage = document.createElement('div');
+          statusMessage.classList.add('form__message');
+          statusMessage.innerText = message.loading;
+          form.insertAdjacentElement("afterend", statusMessage);
+          btn.disabled = true;
+          var formData = new FormData(form);
+          postData("vendor/mail.php", formData).then(function (data) {
+            console.log(data);
+            statusMessage.innerText = message.success;
+          })["catch"](function (err) {
+            console.log(err);
+            statusMessage.innerText = message.failure;
+          })["finally"](function () {
+            btn.disabled = false;
+            form.reset();
+            setTimeout(function () {
+              statusMessage.remove();
+            }, 4000);
+          });
+        }
       });
     };
-    var addValidate = function addValidate(form) {
-      var phoneInput = form.querySelector('.js-phone-input');
+    var checkValidateName = function checkValidateName(form) {
       var nameInput = form.querySelector('.js-name-input');
-      var emailInput = form.querySelector('.js-email-input');
-      var errorContainer = form.querySelector('.js-error-container');
-      var btn = form.querySelector('button.btn');
-
-      // phoneMask = IMask(phoneInput, {
-      //   mask: '0 (000) – 000 – 00 – 00',
-      //   placeholderChar: '_',
-      //   lazy: false,
-      // });
-
-      phoneInput.addEventListener("input", inputHandler);
-      nameInput.addEventListener("input", inputHandler);
-      emailInput.addEventListener("input", inputHandler);
-      function inputHandler() {
-        var errors = [];
-        if (nameInput.value == '') {
-          errors.push(errorsStatus.nameEmpty);
-          nameInput.classList.add('error');
-        } else {
-          nameInput.classList.remove('error');
-          if (/\d/.test(nameInput.value) && nameInput.value !== '') {
-            errors.push(errorsStatus.nameNotDigit);
-            nameInput.classList.add('error');
-          } else {
-            nameInput.classList.remove('error');
-          }
-        }
-
-        // if(!(phoneMask.masked.isComplete)) {
-
-        //   let phoneVal = phoneMask.unmaskedValue;
-
-        //   console.log(phoneVal[0] );
-
-        //   if (!(phoneVal[0] == 7 || phoneVal[0] ==8 )) {
-        //     errors.push(errorsStatus.phoneFirstNotCorrect)
-        //     phoneInput.classList.add('error')
-        //   } else {
-        //     phoneInput.classList.remove('error')
-        //   }
-
-        //   if (!(phoneVal[1] == 9)) {
-        //     errors.push(errorsStatus.phoneSecondNotCorrect)
-        //     phoneInput.classList.add('error')
-        //   } else {
-        //     phoneInput.classList.remove('error')
-        //   }
-
-        //   errors.push(errorsStatus.phoneNotCorrect);
-
-        //   phoneInput.classList.add('error')
-
-        // } else {
-
-        //   phoneInput.classList.remove('error')
-
-        // }
-
-        if (!isValidEmail(emailInput.value)) {
-          errors.push(errorsStatus.emailNotCorrect);
-          emailInput.classList.add('error');
-        } else {
-          emailInput.classList.remove('error');
-        }
-        if (errors.length > 0) {
-          errorContainer.innerText = errors[0];
-          btn.disabled = true;
-        } else {
-          errorContainer.innerText = '';
-          btn.disabled = false;
-        }
-        console.log(errors);
-        console.log(errors[0]);
-
-        //здесь как-то подумать чтобы при проверке если все ок, только тогда разблокировать кнопку и потом снова блокировать с текстом загрузка и в финале сброс
-        //и продумать чтобы при успешной и не успещной отправки формы возвращался json mail.php
-        //также попросить отрисовать модалку чтобы при ошибке или успехе оно открывалось
+      var errorHtml = nameInput.nextElementSibling;
+      var formBlock = nameInput.closest('.form__block');
+      if (nameInput.value == '' || /\d/.test(nameInput.value)) {
+        errorHtml.classList.add('active');
+        formBlock.classList.add('error');
+        return false;
+      } else {
+        errorHtml.classList.remove('active');
+        formBlock.classList.remove('error');
+        return true;
       }
+    };
+    var checkValidatePhone = function checkValidatePhone(form) {
+      var phoneInput = form.querySelector('.js-phone-input');
+      var errorHtml = phoneInput.nextElementSibling;
+      var formBlock = phoneInput.closest('.form__block');
 
-      function isValidEmail(email) {
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+      // проверка
+      var isCompleted = phoneInput.inputmask.isComplete();
+      if (isCompleted) {
+        console.log('Input mask is completed.');
+        errorHtml.classList.remove('active');
+        formBlock.classList.remove('error');
+        return true;
+        //получить
+      } else {
+        console.log('Input mask is not completed.');
+        errorHtml.classList.add('active');
+        formBlock.classList.add('error');
+        return false;
+      }
+    };
+    var checkValidateEmail = function checkValidateEmail(form) {
+      var emailInput = form.querySelector('.js-email-input');
+      var errorHtml = emailInput.nextElementSibling;
+      var formBlock = emailInput.closest('.form__block');
+      if (!isValidEmail(emailInput.value)) {
+        errorHtml.classList.add('active');
+        formBlock.classList.add('error');
+        return false;
+      } else {
+        errorHtml.classList.remove('active');
+        formBlock.classList.remove('error');
+        return true;
       }
     };
     forms.forEach(function (form) {
-      var btn = form.querySelector('button.btn');
-      btn.disabled = true;
-      addValidate(form);
+      bindHandlerInputName(form);
+      addMaskPhone(form);
+      bindHandlerInputEmail(form);
       bindPostData(form);
     });
     var postData = /*#__PURE__*/function () {
@@ -447,16 +479,6 @@ function form() {
       };
     }();
   }
-
-  // phones.forEach((item) => {
-  //   =
-
-  //   item.addEventListener("click", function() {
-  //     phoneMask.updateOptions({
-  //       lazy: false
-  //     });
-  //   });
-  // });
 }
 
 /***/ }),

@@ -1136,25 +1136,28 @@
           <input type="hidden" name="form_subject" value="Create">
 
           <div class="form__row">
-            <div class="form__block">
+            <div class="form__block ">
               <input type="text" class="form__input js-name-input" placeholder="Имя Фамилия" name="username">
-
+              <div class="form__input-error ">
+                Имя должно быть заполнено и содержать только буквы
+              </div>
             </div>
           </div>
           <div class="form__row">
             <div class="form__block">
               <input type="text" class="form__input js-phone-input" placeholder="Телефон" name="phone">
-
+              <div class="form__input-error">
+                Проверьте правильность номера
+              </div>
             </div>
             <div class="form__block">
               <input type="text" class="form__input js-email-input" placeholder="Почта" name="email">
-
+              <div class="form__input-error">
+                Проверьте правильность почты
+              </div>
             </div>
           </div>
 
-          <div class="form__row">
-            <div class="form__input-error js-error-container"></div>
-          </div>
 
           <div class="form__row">
             <button class="btn form__btn">Отправить</button>
