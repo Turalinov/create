@@ -329,39 +329,45 @@ function form() {
         }
       });
       im.mask(phoneInput);
-      var errorHtml = phoneInput.nextElementSibling;
-      var formBlock = phoneInput.closest('.form__block');
+
+      //  const errorHtml = phoneInput.nextElementSibling;
+      //  const formBlock = phoneInput.closest('.form__block');
 
       // проверка
-      phoneInput.addEventListener('input', function (e) {
-        var isCompleted = phoneInput.inputmask.isComplete();
-        if (isCompleted) {
-          console.log('Input mask is completed.');
-          errorHtml.classList.remove('active');
-          formBlock.classList.remove('error');
-          return true;
-          //получить
-        } else {
-          console.log('Input mask is not completed.');
-          errorHtml.classList.add('active');
-          formBlock.classList.add('error');
-          return false;
-        }
-      });
+      // phoneInput.addEventListener('input', function(e) {
+
+      // var isCompleted = phoneInput.inputmask.isComplete();
+
+      //    if (isCompleted) {
+      //     console.log('Input mask is completed.');
+      //     errorHtml.classList.remove('active');
+      //     formBlock.classList.remove('error');
+      //     return true;
+      //     //получить
+      //   } else {
+      //     console.log('Input mask is not completed.');
+      //     errorHtml.classList.add('active');
+      //     formBlock.classList.add('error')
+      //     return false;
+      //   }
+      // })
     };
     var bindHandlerInputEmail = function bindHandlerInputEmail(form) {
       var emailInput = form.querySelector('.js-email-input');
       var errorHtml = emailInput.nextElementSibling;
       var formBlock = emailInput.closest('.form__block');
-      emailInput.addEventListener('input', function (e) {
-        if (!isValidEmail(emailInput.value)) {
-          errorHtml.classList.add('active');
-          formBlock.classList.add('error');
-        } else {
-          errorHtml.classList.remove('active');
-          formBlock.classList.remove('error');
-        }
-      });
+
+      // emailInput.addEventListener('input', function(e) {
+
+      //   if (!(isValidEmail(emailInput.value))) {
+      //     errorHtml.classList.add('active');
+      //     formBlock.classList.add('error');
+      //   } else {
+      //     errorHtml.classList.remove('active');
+      //     formBlock.classList.remove('error');
+      //   }
+
+      // })
     };
     var isValidEmail = function isValidEmail(email) {
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -448,7 +454,7 @@ function form() {
     forms.forEach(function (form) {
       bindHandlerInputName(form);
       addMaskPhone(form);
-      bindHandlerInputEmail(form);
+      // bindHandlerInputEmail(form);
       bindPostData(form);
     });
     var postData = /*#__PURE__*/function () {
