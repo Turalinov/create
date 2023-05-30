@@ -1262,7 +1262,7 @@ input[type=text], input[type=email], input[type=tel] {
   .toggle::before, .toggle::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 20px;
     height: 1px;
     background-color: #000000;
     transition: all 0.3s;
@@ -1278,7 +1278,7 @@ input[type=text], input[type=email], input[type=tel] {
   display: block;
   top: 50%;
   left: 50%;
-  width: 100%;
+  width: 20px;
   height: 1px;
   background-color: #000000;
   transform: translate(-50%, -50%);
