@@ -1145,19 +1145,15 @@ input[type=text], input[type=email], input[type=tel] {
     @media screen and (min-width: 1200px) {
       .header::before {
         display: none; } }
-  .header.active .header__toggle.toggle {
-    border: 1px solid #EDEDED;
-    border-radius: 50%; }
-    .header.active .header__toggle.toggle .toggle__inner {
-      display: none; }
-    .header.active .header__toggle.toggle::before, .header.active .header__toggle.toggle::after {
-      width: 20px;
-      top: 50%;
-      transition: all 0.3s; }
-    .header.active .header__toggle.toggle::before {
-      transform: translate(-50%, -50%) rotate(45deg); }
-    .header.active .header__toggle.toggle::after {
-      transform: translate(-50%, -50%) rotate(-45deg); }
+  .header.active .header__toggle.toggle .toggle__inner {
+    display: none; }
+  .header.active .header__toggle.toggle::before, .header.active .header__toggle.toggle::after {
+    top: 50%;
+    transition: all 0.3s; }
+  .header.active .header__toggle.toggle::before {
+    transform: translate(-50%, -50%) rotate(45deg); }
+  .header.active .header__toggle.toggle::after {
+    transform: translate(-50%, -50%) rotate(-45deg); }
   .header.active .header__dropdown {
     top: 0;
     transition: all 0.5s; }
@@ -1254,35 +1250,37 @@ input[type=text], input[type=email], input[type=tel] {
 
 .toggle {
   position: relative;
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
   .toggle::before, .toggle::after {
     content: "";
     position: absolute;
-    width: 20px;
-    height: 1px;
+    width: 30px;
+    height: 2px;
     background-color: #000000;
     transition: all 0.3s;
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    border-radius: 2px; }
   .toggle::before {
-    top: 13px; }
+    top: 5px; }
   .toggle::after {
-    bottom: 13px; }
+    bottom: 5px; }
 
 .toggle__inner {
   position: absolute;
   display: block;
   top: 50%;
   left: 50%;
-  width: 20px;
-  height: 1px;
+  width: 30px;
+  height: 2px;
   background-color: #000000;
   transform: translate(-50%, -50%);
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  border-radius: 2px; }
 
 @media screen and (min-width: 1200px) {
   .menu > ul {
