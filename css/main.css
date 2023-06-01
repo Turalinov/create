@@ -1467,7 +1467,7 @@ input[type=text], input[type=email], input[type=tel] {
       bottom: 72px; } }
 
 .hero__title {
-  font-size: 53px;
+  font-size: 50px;
   margin-bottom: 20px; }
   @media screen and (min-width: 1200px) {
     .hero__title {
