@@ -894,83 +894,6 @@ function toggle() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return video; });
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-var Player = /*#__PURE__*/function () {
-  function Player() {
-    var _this = this;
-    _classCallCheck(this, Player);
-    _defineProperty(this, "handleClick", function () {
-      if (_this.apiLoaded) {
-        console.log('YouTube API готов к использованию.');
-        if (!_this.player) {
-          console.log('Сейчас player = null, поэтому создаем его');
-          // Создаем объект плеера YouTube
-          _this.player = new YT.Player(_this.container, {
-            height: '360',
-            width: '640',
-            playerVars: {
-              'controls': 0
-            },
-            videoId: _this.videoId,
-            // Замените VIDEO_ID на идентификатор YouTube видео
-            events: {
-              'onStateChange': _this.onPlayerStateChange.bind(_this)
-            }
-          });
-        } else {
-          console.log('Player существует, работаем с ним');
-          _this.videoWrap.classList.toggle('pause');
-          if (!_this.videoWrap.classList.contains('pause')) {
-            _this.playVideo();
-          }
-        }
-      } else {
-        console.error('YouTube API не готов к использованию.');
-      }
-    });
-    _defineProperty(this, "onPlayerStateChange", function (event) {
-      //-1 = не начато , 0 = завершено, 2 = пауза
-      if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
-        _this.stopVideo();
-        _this.videoWrap.classList.add('pause');
-      }
-    });
-    this.player = false;
-    this.videoWrap = null;
-    this.container = null;
-    this.videoId = null;
-    this.apiLoaded = false;
-  }
-  _createClass(Player, [{
-    key: "init",
-    value: function init(videoWrap, container, videoId, apiLoaded) {
-      this.videoWrap = videoWrap;
-      this.container = container;
-      this.videoId = videoId;
-      this.apiLoaded = apiLoaded;
-      var btn = this.videoWrap.querySelector('.video__btn');
-      // Добавляем обработчик события клика на video__btn
-      btn.addEventListener('click', this.handleClick);
-    }
-  }, {
-    key: "playVideo",
-    value: function playVideo() {
-      this.player.playVideo();
-    }
-  }, {
-    key: "stopVideo",
-    value: function stopVideo() {
-      this.player.pauseVideo();
-    }
-  }]);
-  return Player;
-}();
 function video() {
   console.log('video');
 
@@ -992,10 +915,56 @@ function video() {
   function init() {
     var videos = document.querySelectorAll('.video');
     videos.forEach(function (video) {
+      var player;
       var videoElem = video.querySelector('.video__elem');
       var videoId = video.getAttribute('data-id');
-      var playerInstance = new Player();
-      playerInstance.init(video, videoElem, videoId, apiLoaded);
+      if (apiLoaded) {
+        console.log('YouTube API загружено.');
+        if (!player) {
+          console.log('player создание');
+          // Создаем объект плеера YouTube
+          player = new YT.Player(videoElem, {
+            height: '360',
+            width: '640',
+            playerVars: {
+              'controls': 0
+            },
+            videoId: videoId,
+            // Замените VIDEO_ID на идентификатор YouTube видео
+            events: {
+              'onStateChange': onPlayerStateChange
+            }
+          });
+        } else {
+          console.log('player существует');
+        }
+      } else {
+        console.error('YouTube API не загружено.');
+      }
+      function playVideo() {
+        player.playVideo();
+      }
+      function stopVideo() {
+        player.pauseVideo();
+      }
+      function onPlayerStateChange(event) {
+        //-1 = не начато , 0 = завершено, 2 = пауза
+        if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+          stopVideo();
+          video.classList.add('pause');
+        }
+      }
+      var btn = video.querySelector('.video__btn');
+      // Добавляем обработчик события клика на video__btn
+      btn.addEventListener('click', function (e) {
+        video.classList.toggle('pause');
+        if (!video.classList.contains('pause')) {
+          playVideo();
+        } else {
+          console.log('есть pause');
+          console.log(player);
+        }
+      });
     });
   }
 }
