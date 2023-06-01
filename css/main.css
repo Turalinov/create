@@ -1474,6 +1474,9 @@ input[type=text], input[type=email], input[type=tel] {
   @media screen and (min-width: 411px) {
     .hero__title {
       font-size: 57px; } }
+  @media screen and (min-width: 1200px) {
+    .hero__title {
+      font-size: 73px; } }
 
 .hero__desc {
   margin-bottom: 20px; }
